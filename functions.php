@@ -1230,3 +1230,41 @@ function ab_social_icon_links( $class = 'ab-social-icons', $aria_label = 'Abirov
     if ( '' === $html ) { return; }
     echo '<div class="' . esc_attr( $class ) . '" role="group" aria-label="' . esc_attr( $aria_label ) . '">' . $html . '</div>';
 }
+
+/* ==========================================================================
+   Knowledge Hub — 12 cards per page
+   -------------------------------------------------------------------------
+   The Knowledge Hub card grid is 3 columns wide, so the default 10 cards per
+   page (Settings → Reading) leave a single orphan card on the last row.
+   This sets the library to 12 cards per page (page 1: 12, page 2: 12, and so
+   on), which always fills complete rows: 4 rows × 3 on desktop, 6 rows × 2 on
+   tablet, 12 × 1 on mobile. Applies to the Knowledge Center archive, all
+   three knowledge taxonomies and the in-hub search/filter results.
+   ========================================================================== */
+add_action( 'pre_get_posts', 'ab_knowledge_hub_per_page', 20 );
+function ab_knowledge_hub_per_page( $query ) {
+    // Never touch the admin list tables or secondary queries.
+    if ( is_admin() || ! ( $query instanceof WP_Query ) || ! $query->is_main_query() ) {
+        return;
+    }
+
+    // Knowledge Center archive (/knowledge/) and its filtered search results.
+    $is_knowledge_library = $query->is_post_type_archive( 'knowledge' )
+        // Knowledge taxonomy archives (knowledge-hub / knowledge-material / knowledge-topic).
+        || $query->is_tax( array( 'knowledge_hub', 'knowledge_material', 'knowledge_topic' ) );
+
+    // Also cover the hub's search form (e.g. /knowledge/?s=hdpe), where the
+    // main query is a search scoped to the 'knowledge' post type.
+    if ( ! $is_knowledge_library && $query->is_search() ) {
+        $post_type = $query->get( 'post_type' );
+        $is_knowledge_library = 'knowledge' === $post_type
+            || ( is_array( $post_type ) && in_array( 'knowledge', $post_type, true ) );
+    }
+
+    if ( ! $is_knowledge_library ) {
+        return;
+    }
+
+    // 12 cards per page; filterable if the number ever needs to change.
+    $query->set( 'posts_per_page', (int) apply_filters( 'ab_knowledge_hub_per_page', 12 ) );
+}
