@@ -1,0 +1,1527 @@
+/* =========================================================================
+   BHAVIK ENTERPRISES — DEDICATED STANDALONE PAGE STYLESHEET (bhavik.css)
+   -------------------------------------------------------------------------
+   Loaded exclusively on template-bhavik-enterprises.php (/bhavik-enterprises/).
+   Zero dependency on about.css or contact.css; zero Bhavik rules in site.css.
+   ========================================================================= */
+
+:root {
+    --bv-ink: #142334;
+    --bv-muted: #536572;
+    --bv-teal: #008080;
+    --bv-teal-deep: #0b5d63;
+    --bv-blue: #1d4e9f;
+    --bv-orange: #f58220;
+    --bv-mist: #f3f7f6;
+    --bv-section-pad: clamp(68px, 7vw, 96px);
+    --bv-3d-surface: 0 2px 5px rgba(16, 38, 56, .04),
+        0 14px 30px -6px rgba(16, 38, 56, .09),
+        0 28px 54px -14px rgba(13, 62, 68, .12),
+        inset 0 1px 0 rgba(255, 255, 255, .96);
+    --bv-3d-hover: 0 6px 12px rgba(16, 38, 56, .06),
+        0 22px 44px -8px rgba(16, 38, 56, .13),
+        0 38px 70px -14px rgba(0, 128, 128, .18),
+        inset 0 1px 0 #ffffff;
+    --bv-btn-3d: 0 2px 5px rgba(180, 82, 8, .10),
+        0 4px 10px rgba(245, 130, 32, .12),
+        inset 0 1px 0 rgba(255, 255, 255, .28),
+        inset 0 -2px 0 rgba(166, 72, 0, .16);
+    --bv-btn-3d-hover: 0 4px 8px rgba(180, 82, 8, .13),
+        0 8px 16px rgba(245, 130, 32, .16),
+        inset 0 1px 0 rgba(255, 255, 255, .34),
+        inset 0 -2px 0 rgba(150, 62, 0, .18);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#bv-hero,
+#why-bhavik,
+#about,
+#products,
+#industries,
+#the-way,
+#faqs,
+#quick-enquiry,
+#bhavik-enquiry-form {
+    scroll-margin-top: calc(var(--ab-live-nav-h, var(--ab-nav-h, 82px)) + 18px);
+}
+
+.ab-bhavik-page,
+.ab-bhavik-page *,
+.ab-bhavik-page *::before,
+.ab-bhavik-page *::after {
+    box-sizing: border-box;
+}
+
+.ab-bhavik-page {
+    background: #ffffff;
+    color: var(--bv-ink);
+    font-family: "Reddit Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.62;
+    overflow-x: clip;
+}
+
+.ab-bhavik-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.ab-bhavik-page img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================================================
+   LAYOUT, TYPOGRAPHY & UNIFIED ICON SYSTEM
+   ========================================================================= */
+
+.ab-bhavik-page .ab-section {
+    padding: var(--bv-section-pad) 0;
+    position: relative;
+}
+
+.ab-bhavik-page .ab-section--white {
+    background: #ffffff;
+}
+
+.ab-bhavik-page .ab-section--mist {
+    background: linear-gradient(180deg, #f3f8f7 0%, #edf4f3 100%);
+}
+
+.ab-bhavik-page h1 {
+    font-size: clamp(38px, 4.35vw, 58px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    color: var(--bv-ink);
+    margin: 0 0 18px;
+}
+
+.ab-bhavik-page h1 span {
+    color: var(--bv-teal);
+}
+
+.ab-bhavik-page h2 {
+    font-size: clamp(30px, 3.45vw, 48px);
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -.028em;
+    color: var(--bv-ink);
+    margin: 0 0 16px;
+}
+
+/* Eyebrow matched 1:1 to Home, About, Contact, Products & Material pages */
+.ab-bhavik-page .ab-eyebrow {
+    display: flex;
+    align-items: flex-start;
+    width: fit-content;
+    max-width: 100%;
+    gap: 10px;
+    margin: 0 0 var(--ab-rhythm-eyebrow, 14px);
+    color: #008080;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    line-height: 1.5;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.ab-bhavik-page .ab-eyebrow::before {
+    content: "";
+    flex: 0 0 24px;
+    width: 24px;
+    height: 2px;
+    margin-top: calc(.7em - 1px);
+    border-radius: 4px;
+    background: #f58220;
+}
+
+.ab-bhavik-page .ab-section-head {
+    max-width: 720px;
+    margin-bottom: 42px;
+}
+
+.ab-bhavik-page .ab-section-head > p {
+    margin: 0;
+    color: var(--bv-muted);
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.ab-bhavik-page .ab-head-row,
+.ab-bhavik-page .ab-way-intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 42px;
+}
+
+.ab-bhavik-page .ab-head-row > .ab-section-head,
+.ab-bhavik-page .ab-way-intro > .ab-section-head {
+    margin-bottom: 0;
+}
+
+.ab-bhavik-page .ab-head-row > .ab-btn,
+.ab-bhavik-page .ab-way-intro > .ab-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+/* Strict card heading = 22px across all cards on Bhavik */
+.ab-bhavik-page .ab-pillar h3,
+.ab-bhavik-page .ab-why-card h3,
+.ab-bhavik-page .ab-bv-ind-card h3,
+.ab-bhavik-page .ab-way-item h3,
+.ab-bhavik-page .ab-faq-help-title,
+.ab-bhavik-page .ab-contact-aside-heading h3,
+.ab-bhavik-page .ab-contact-form h3 {
+    font-size: 22px;
+    line-height: 1.28;
+    font-weight: 700;
+    letter-spacing: -.018em;
+    margin: 0 0 10px;
+    color: var(--bv-ink);
+}
+
+/* Strict 17px body, list, FAQ & form scale */
+.ab-bhavik-page p,
+.ab-bhavik-page li,
+.ab-bhavik-page .lead,
+.ab-bhavik-page .ab-lead,
+.ab-bhavik-page .ab-link,
+.ab-bhavik-page .ab-faq-q,
+.ab-bhavik-page .ab-faq-body,
+.ab-bhavik-page .ab-contact-detail strong,
+.ab-bhavik-page .ab-field label,
+.ab-bhavik-page .ab-field input,
+.ab-bhavik-page .ab-field select,
+.ab-bhavik-page .ab-field textarea {
+    font-size: 17px;
+}
+
+/* Unified SVG & 3D Teal Icon Boxes */
+.ab-bhavik-page .ab-icon,
+.ab-bhavik-page .ab-contact-detail-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+.ab-bhavik-page .ab-icon-box,
+.ab-bhavik-page .ab-contact-detail-icon {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border-radius: 14px;
+    border: 0;
+    background: linear-gradient(145deg, #ecf6f4 0%, #dfefec 100%);
+    color: var(--bv-teal);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 7px 16px rgba(17, 48, 56, .11),
+        inset 0 1px 2px rgba(255, 255, 255, .95),
+        inset 0 -2px 4px rgba(0, 128, 128, .08);
+}
+
+.ab-bhavik-page .ab-icon-box .ab-icon,
+.ab-bhavik-page .ab-contact-detail-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* =========================================================================
+   BORDERLESS 3D ORANGE BUTTONS (ALL VARIANTS UNIFIED)
+   ========================================================================= */
+
+.ab-bhavik-page .ab-btn,
+.ab-bhavik-page .ab-btn--outline,
+.ab-bhavik-page .ab-btn--light,
+.ab-bhavik-page .ab-contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 13px 24px;
+    border: 0 !important;
+    outline: none;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ff9238 0%, #f58220 54%, #e26d0c 100%);
+    color: #ffffff !important;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: .01em;
+    box-shadow: var(--bv-btn-3d);
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: transform .24s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .24s cubic-bezier(.22, 1, .36, 1),
+        background .24s ease;
+}
+
+.ab-bhavik-page .ab-btn:hover,
+.ab-bhavik-page .ab-btn--outline:hover,
+.ab-bhavik-page .ab-btn--light:hover,
+.ab-bhavik-page .ab-contact-submit:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, #ff9d4b 0%, #ff8826 52%, #e87312 100%);
+    color: #ffffff !important;
+    box-shadow: var(--bv-btn-3d-hover);
+}
+
+.ab-bhavik-page .ab-btn:active,
+.ab-bhavik-page .ab-contact-submit:active {
+    transform: translateY(-1px);
+}
+
+.ab-bhavik-page .ab-btn:focus-visible,
+.ab-bhavik-page .ab-contact-submit:focus-visible {
+    outline: 3px solid rgba(245, 130, 32, .42);
+    outline-offset: 3px;
+}
+
+.ab-bhavik-page .ab-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--bv-teal);
+    font-weight: 700;
+    transition: gap .2s ease, color .2s ease;
+}
+
+.ab-bhavik-page .ab-link:hover {
+    gap: 11px;
+    color: var(--bv-teal-deep);
+}
+
+/* =========================================================================
+   1. HERO SECTION — EQUAL-HEIGHT RIGHT IMAGE MATCHING LEFT COPY CONTAINER
+   ========================================================================= */
+
+.ab-bhavik-page .ab-about-hero {
+    padding: var(--ab-banner-pad, clamp(58px, 6.5vw, 90px)) 0;
+    background: radial-gradient(circle at 86% 18%, rgba(0, 128, 128, .08), transparent 38%),
+        radial-gradient(circle at 10% 85%, rgba(245, 130, 32, .06), transparent 34%),
+        linear-gradient(180deg, #f5faf9 0%, #ffffff 100%);
+}
+
+.ab-bhavik-page .ab-about-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.14fr) minmax(0, .86fr);
+    grid-template-rows: auto;
+    gap: clamp(32px, 4.5vw, 52px);
+    align-items: stretch;
+    align-content: start;
+}
+
+.ab-bhavik-page .ab-about-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: stretch;
+    min-width: 0;
+}
+
+.ab-bhavik-page .ab-lead {
+    margin: 0 0 28px;
+    color: var(--bv-muted);
+    max-width: 620px;
+    line-height: 1.66;
+}
+
+.ab-bhavik-page .ab-about-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    margin-top: auto;
+}
+
+.ab-bhavik-page .ab-about-hero-art {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    align-self: stretch;
+    border-radius: 28px;
+    overflow: hidden;
+    background: linear-gradient(140deg, #102a3d, #0f5666);
+    box-shadow: 0 20px 48px -12px rgba(15, 42, 58, .20),
+        0 6px 16px rgba(15, 42, 58, .08);
+}
+
+.ab-bhavik-page .ab-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ab-bhavik-page .ab-art-tag {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(16, 38, 56, .72);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 24px rgba(6, 20, 32, .24),
+        inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+
+.ab-bhavik-page .ab-hero-glass-card {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    border: 0;
+    background: rgba(16, 38, 56, .76);
+    color: #ffffff;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 14px 30px rgba(6, 20, 32, .28),
+        inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+
+.ab-bhavik-page .ab-hero-glass-card small {
+    display: block;
+    font-size: 12px;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: #a8ded6;
+    margin-bottom: 3px;
+}
+
+.ab-bhavik-page .ab-hero-glass-card strong {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* =========================================================================
+   2. WHY CHOOSE BHAVIK (4 COMMITMENT PILLARS)
+   ========================================================================= */
+
+.ab-bhavik-page .ab-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.ab-bhavik-page .ab-pillar {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 24px;
+    border: 0;
+    border-radius: 24px;
+    background: linear-gradient(165deg, #ffffff 0%, #f7fbfa 100%);
+    box-shadow: var(--bv-3d-surface);
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.ab-bhavik-page .ab-pillar:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--bv-3d-hover);
+}
+
+.ab-bhavik-page .ab-pillar .ab-icon-box {
+    margin-bottom: 18px;
+}
+
+.ab-bhavik-page .ab-pillar p {
+    margin: 0 0 16px;
+    color: var(--bv-muted);
+}
+
+.ab-bhavik-page .ab-pillar ul {
+    margin: auto 0 0;
+    padding: 14px 0 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid rgba(20, 35, 52, .06);
+}
+
+.ab-bhavik-page .ab-pillar ul li {
+    position: relative;
+    padding-left: 18px;
+    color: var(--bv-ink);
+    font-weight: 600;
+}
+
+.ab-bhavik-page .ab-pillar ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .62em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--bv-teal);
+}
+
+/* =========================================================================
+   3. WHO WE ARE (STORY SPLIT — EQUAL-HEIGHT VISUAL & COPY)
+   ========================================================================= */
+
+.ab-bhavik-page .ab-story {
+    display: grid;
+    grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
+    grid-template-rows: auto;
+    gap: 52px;
+    align-items: stretch;
+    align-content: start;
+}
+
+.ab-bhavik-page .ab-story-visual {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    align-self: stretch;
+    border-radius: 26px;
+    overflow: hidden;
+    background: linear-gradient(140deg, #102a3d, #0f5666);
+    box-shadow: 0 20px 46px -12px rgba(15, 42, 58, .18),
+        0 6px 16px rgba(15, 42, 58, .08);
+}
+
+.ab-bhavik-page .ab-story-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ab-bhavik-page .ab-story-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: stretch;
+    min-width: 0;
+}
+
+.ab-bhavik-page .ab-story-chip {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(16, 38, 56, .72);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.ab-bhavik-page .ab-story-badge {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .94);
+    color: var(--bv-muted);
+    box-shadow: 0 14px 32px rgba(12, 34, 48, .20);
+}
+
+.ab-bhavik-page .ab-story-badge strong {
+    display: block;
+    color: var(--bv-ink);
+    font-weight: 800;
+}
+
+.ab-bhavik-page .ab-story-copy p {
+    margin: 0 0 16px;
+    color: var(--bv-muted);
+}
+
+.ab-bhavik-page .ab-story-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.ab-bhavik-page .ab-story-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--bv-ink);
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(16, 38, 56, .08),
+        inset 0 1px 0 #ffffff;
+}
+
+.ab-bhavik-page .ab-story-pill .ab-icon {
+    color: var(--bv-teal);
+}
+
+/* =========================================================================
+   4. OUR PRODUCTS (6 POLYMER CARDS)
+   ========================================================================= */
+
+.ab-bhavik-page .ab-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.ab-bhavik-page .ab-why-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 26px;
+    border: 0;
+    border-radius: 24px;
+    background: linear-gradient(165deg, #ffffff 0%, #f8fcfb 100%);
+    box-shadow: var(--bv-3d-surface);
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.ab-bhavik-page .ab-why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--bv-3d-hover);
+}
+
+.ab-bhavik-page .ab-bv-product-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.ab-bhavik-page .ab-why-tag {
+    margin: 0;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #eef6f5;
+    color: var(--bv-teal);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-align: right;
+}
+
+.ab-bhavik-page .ab-why-card p {
+    margin: 0 0 18px;
+    color: var(--bv-muted);
+    line-height: 1.62;
+    flex: 1;
+}
+
+.ab-bhavik-page .ab-why-card .ab-link {
+    margin-top: auto;
+}
+
+/* =========================================================================
+   5. INDUSTRIES WE SERVE — SCULPTURAL 3D BORDERLESS IMAGE CARDS
+   ========================================================================= */
+
+.ab-bhavik-page .ab-bv-ind-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+.ab-bhavik-page .ab-bv-ind-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 14px 14px 26px;
+    border: 0 !important;
+    border-radius: 26px;
+    background: linear-gradient(165deg, #ffffff 0%, #fafdfd 58%, #eff6f5 100%);
+    box-shadow: 0 2px 5px rgba(16, 38, 56, .04),
+        0 14px 28px -6px rgba(16, 38, 56, .10),
+        0 32px 62px -14px rgba(13, 62, 68, .16),
+        inset 0 1px 0 rgba(255, 255, 255, .98),
+        inset 0 -3px 6px rgba(0, 128, 128, .05);
+    transition: transform .34s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .34s cubic-bezier(.22, 1, .36, 1);
+    transform: translateZ(0);
+}
+
+.ab-bhavik-page .ab-bv-ind-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    border: 0 !important;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(140deg, #102a3d, #0f5666);
+    box-shadow: 0 14px 28px -8px rgba(13, 44, 58, .28),
+        0 4px 10px rgba(13, 44, 58, .12);
+    isolation: isolate;
+}
+
+.ab-bhavik-page .ab-bv-ind-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg,
+        rgba(12, 34, 48, .04) 0%,
+        rgba(12, 34, 48, 0) 44%,
+        rgba(12, 34, 48, .44) 100%);
+    pointer-events: none;
+}
+
+.ab-bhavik-page .ab-bv-ind-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .55s cubic-bezier(.22, 1, .36, 1);
+}
+
+.ab-bhavik-page .ab-bv-ind-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    padding: 6px 13px;
+    border: 0 !important;
+    border-radius: 999px;
+    background: rgba(16, 38, 56, .66);
+    color: #eef9f7;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 6px 16px rgba(10, 26, 38, .24),
+        inset 0 1px 0 rgba(255, 255, 255, .22);
+}
+
+.ab-bhavik-page .ab-bv-ind-body {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 12px;
+}
+
+.ab-bhavik-page .ab-bv-ind-icon {
+    margin-top: -24px;
+    margin-bottom: 14px;
+    background: linear-gradient(145deg, #ffffff 0%, #e4f2f0 100%);
+    box-shadow: 0 10px 24px rgba(14, 45, 57, .18),
+        0 3px 7px rgba(14, 45, 57, .09),
+        inset 0 1px 2px #ffffff;
+    transition: transform .34s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .34s cubic-bezier(.22, 1, .36, 1);
+}
+
+.ab-bhavik-page .ab-bv-ind-body p {
+    margin: 0;
+    color: var(--bv-muted);
+    line-height: 1.6;
+}
+
+@media (hover: hover) {
+    .ab-bhavik-page .ab-bv-ind-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 6px 12px rgba(16, 38, 56, .06),
+            0 22px 44px -8px rgba(16, 38, 56, .14),
+            0 40px 76px -14px rgba(0, 128, 128, .20),
+            inset 0 1px 0 #ffffff;
+    }
+
+    .ab-bhavik-page .ab-bv-ind-card:hover .ab-bv-ind-media img {
+        transform: scale(1.06);
+    }
+
+    .ab-bhavik-page .ab-bv-ind-card:hover .ab-bv-ind-icon {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px rgba(0, 128, 128, .22),
+            0 4px 10px rgba(14, 45, 57, .10),
+            inset 0 1px 2px #ffffff;
+    }
+}
+
+/* =========================================================================
+   6. HOW WE WORK (DARK 4-STEP SUPPLY PROCESS)
+   ========================================================================= */
+
+.ab-bhavik-page .ab-way-section {
+    background: radial-gradient(circle at 82% 16%, rgba(0, 168, 168, .18), transparent 40%),
+        linear-gradient(125deg, #0d2233 0%, #103b4b 58%, #0e585d 100%);
+    color: #ffffff;
+}
+
+.ab-bhavik-page .ab-way-section .ab-eyebrow {
+    color: #a8ded6;
+}
+
+.ab-bhavik-page .ab-way-section h2 {
+    color: #ffffff;
+}
+
+.ab-bhavik-page .ab-way-section .ab-section-head > p {
+    color: #d6e8ea;
+}
+
+.ab-bhavik-page .ab-way-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.ab-bhavik-page .ab-way-item {
+    padding: 28px 24px;
+    border: 0;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .065);
+    box-shadow: 0 14px 32px rgba(5, 16, 26, .26),
+        inset 0 1px 0 rgba(255, 255, 255, .12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.ab-bhavik-page .ab-way-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 46px;
+    height: 36px;
+    padding: 0 12px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    background: rgba(168, 222, 214, .16);
+    color: #a8ded6;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+
+.ab-bhavik-page .ab-way-item h3 {
+    color: #ffffff;
+}
+
+.ab-bhavik-page .ab-way-item p {
+    margin: 0;
+    color: #cde0e3;
+    line-height: 1.6;
+}
+
+/* =========================================================================
+   7. FREQUENTLY ASKED QUESTIONS — TINTED 3D QUESTION BOXES
+   ========================================================================= */
+
+.ab-bhavik-page .ab-faq-section {
+    background: #ffffff;
+}
+
+.ab-bhavik-page .ab-faq-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+    gap: clamp(32px, 4vw, 54px);
+    align-items: start;
+}
+
+.ab-bhavik-page .ab-faq-side > p {
+    margin: 0;
+    color: var(--bv-muted);
+    line-height: 1.65;
+}
+
+.ab-bhavik-page .ab-faq-help-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 28px;
+    padding: 24px;
+    border: 0;
+    border-radius: 22px;
+    background: linear-gradient(155deg, #eff8f6 0%, #e2f0ee 100%);
+    box-shadow: 0 12px 28px -6px rgba(13, 62, 68, .12),
+        0 3px 6px rgba(16, 38, 56, .04),
+        inset 0 1px 0 rgba(255, 255, 255, .96);
+}
+
+.ab-bhavik-page .ab-faq-help-sub {
+    margin: 0 0 12px;
+    color: var(--bv-muted);
+    line-height: 1.55;
+}
+
+.ab-bhavik-page .ab-faq-help-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    color: var(--bv-teal);
+}
+
+.ab-bhavik-page .ab-faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Distinct tinted 3D surface on every FAQ question box (no left border) */
+.ab-bhavik-page .ab-faq-item {
+    position: relative;
+    border: 0 !important;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(155deg, #f2f9f8 0%, #e6f2f0 100%);
+    box-shadow: 0 3px 6px rgba(15, 42, 56, .05),
+        0 12px 26px -6px rgba(13, 62, 68, .11),
+        0 24px 44px -14px rgba(13, 62, 68, .10),
+        inset 0 1px 0 rgba(255, 255, 255, .96),
+        inset 0 -2px 5px rgba(0, 128, 128, .06);
+    transition: transform .26s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .26s cubic-bezier(.22, 1, .36, 1),
+        background .26s ease;
+}
+
+.ab-bhavik-page .ab-faq-item:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(155deg, #f6fbfa 0%, #eaf5f3 100%);
+    box-shadow: 0 5px 10px rgba(15, 42, 56, .06),
+        0 16px 32px -8px rgba(13, 62, 68, .13),
+        inset 0 1px 0 #ffffff,
+        inset 0 -2px 5px rgba(0, 128, 128, .07);
+}
+
+.ab-bhavik-page .ab-faq-item[open] {
+    background: linear-gradient(160deg, #eef7f6 0%, #e0efec 100%);
+    box-shadow: 0 6px 14px rgba(15, 42, 56, .06),
+        0 18px 36px -8px rgba(13, 62, 68, .14),
+        inset 0 1px 0 #ffffff,
+        inset 0 -3px 6px rgba(0, 128, 128, .07);
+}
+
+.ab-bhavik-page .ab-faq-summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 64px;
+    padding: 20px 24px;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.ab-bhavik-page .ab-faq-summary::-webkit-details-marker {
+    display: none;
+}
+
+.ab-bhavik-page .ab-faq-q-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 0;
+}
+
+.ab-bhavik-page .ab-faq-category-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--bv-teal);
+}
+
+.ab-bhavik-page .ab-faq-category-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.ab-bhavik-page .ab-faq-q {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.44;
+    color: var(--bv-ink);
+}
+
+.ab-bhavik-page .ab-faq-trigger-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    border-radius: 50%;
+    border: 0;
+    background: linear-gradient(145deg, #ffffff 0%, #eff6f5 100%);
+    color: var(--bv-teal);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 6px 14px rgba(15, 42, 56, .12),
+        inset 0 1px 0 #ffffff,
+        inset 0 -2px 3px rgba(0, 128, 128, .08);
+    transition: transform .26s cubic-bezier(.22, 1, .36, 1),
+        background .26s ease,
+        color .26s ease,
+        box-shadow .26s ease;
+}
+
+.ab-bhavik-page .ab-faq-item[open] .ab-faq-trigger-icon {
+    transform: rotate(45deg);
+    background: linear-gradient(180deg, #ff9238 0%, #f58220 60%, #e26d0c 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(245, 130, 32, .20),
+        inset 0 1px 0 rgba(255, 255, 255, .32);
+}
+
+.ab-bhavik-page .ab-faq-body {
+    margin: 0 20px 20px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .88);
+    color: var(--bv-muted);
+    font-size: 17px;
+    line-height: 1.65;
+    box-shadow: inset 0 2px 5px rgba(15, 42, 56, .05),
+        0 1px 0 rgba(255, 255, 255, .95);
+}
+
+.ab-bhavik-page .ab-faq-body p {
+    margin: 0;
+}
+
+/* =========================================================================
+   8. DARK FINAL CTA BAND
+   ========================================================================= */
+
+.ab-bhavik-page .ab-final-cta {
+    padding: var(--bv-section-pad) 0;
+    background: radial-gradient(ellipse at 18% 20%, rgba(168, 222, 214, .14), transparent 46%),
+        linear-gradient(112deg, #102a3d 0%, #124e60 64%, #0f6f72 100%);
+}
+
+.ab-bhavik-page .ab-final-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) auto;
+    gap: 36px;
+    align-items: center;
+}
+
+.ab-bhavik-page .ab-final-copy {
+    max-width: 720px;
+}
+
+.ab-bhavik-page .ab-final-cta .ab-eyebrow {
+    color: #a8ded6;
+}
+
+.ab-bhavik-page .ab-final-copy h2 {
+    margin: 0 0 14px;
+    color: #ffffff;
+}
+
+.ab-bhavik-page .ab-final-copy p {
+    margin: 0;
+    color: #e3f1f2;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.ab-bhavik-page .ab-final-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+}
+
+/* =========================================================================
+   9. CONTACT US, OUR PRESENCE & ENQUIRY FORM
+   ========================================================================= */
+
+.ab-bhavik-page .ab-contact-main {
+    background: linear-gradient(180deg, #f4f9f8 0%, #edf4f3 100%);
+}
+
+.ab-bhavik-page .ab-contact-intro {
+    max-width: 760px;
+    margin: 0 0 42px;
+    text-align: left;
+}
+
+.ab-bhavik-page .ab-contact-intro > p {
+    max-width: 660px;
+    margin: 14px 0 0;
+    color: var(--bv-muted);
+}
+
+.ab-bhavik-page .ab-contact-notice {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 28px;
+    padding: 18px 22px;
+    border-radius: 18px;
+    border: 0;
+    box-shadow: var(--bv-3d-surface);
+}
+
+.ab-bhavik-page .ab-contact-notice--success {
+    background: #ebfaf4;
+    color: #0e523d;
+}
+
+.ab-bhavik-page .ab-contact-notice--error {
+    background: #fef1f0;
+    color: #8c261e;
+}
+
+.ab-bhavik-page .ab-contact-layout {
+    display: grid;
+    grid-template-columns: minmax(340px, .9fr) minmax(0, 1.1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.ab-bhavik-page .ab-contact-aside,
+.ab-bhavik-page .ab-contact-form {
+    padding: 30px;
+    border: 0;
+    border-radius: 26px;
+    background: linear-gradient(165deg, #ffffff 0%, #f9fcfb 100%);
+    box-shadow: var(--bv-3d-surface);
+}
+
+.ab-bhavik-page .ab-contact-aside-heading p,
+.ab-bhavik-page .ab-contact-form-heading p {
+    margin: 0;
+    color: var(--bv-muted);
+}
+
+.ab-bhavik-page .ab-bv-contact-details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+    margin: 22px 0;
+}
+
+.ab-bhavik-page .ab-contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin: 0;
+    padding: 15px 16px;
+    border: 0;
+    border-radius: 18px;
+    background: linear-gradient(155deg, #f5faf9 0%, #ebf4f2 100%);
+    box-shadow: 0 6px 16px rgba(16, 38, 56, .06),
+        inset 0 1px 0 #ffffff;
+    transition: transform .22s ease, box-shadow .22s ease;
+    touch-action: manipulation;
+}
+
+.ab-bhavik-page a.ab-contact-detail:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 128, 128, .12),
+        inset 0 1px 0 #ffffff;
+}
+
+.ab-bhavik-page .ab-contact-detail > span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.ab-bhavik-page .ab-contact-detail small {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--bv-teal);
+}
+
+.ab-bhavik-page .ab-contact-detail strong {
+    color: var(--bv-ink);
+    font-weight: 700;
+    line-height: 1.42;
+    word-break: break-word;
+}
+
+.ab-bhavik-page .ab-contact-detail em {
+    font-style: normal;
+    font-size: 14px;
+    color: #63757d;
+}
+
+/* Dedicated "Our Presence" block (Head Office: Kanpur | Branches: Mumbai, Mundra) */
+.ab-bhavik-page .ab-bv-presence-block {
+    margin-top: 4px;
+    padding: 16px;
+    border-radius: 20px;
+    background: linear-gradient(155deg, #eef7f6 0%, #e3f0ee 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .92),
+        0 8px 20px rgba(15, 42, 56, .06);
+}
+
+.ab-bhavik-page .ab-bv-presence-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: var(--bv-ink);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+
+.ab-bhavik-page .ab-bv-presence-title::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--bv-orange);
+    box-shadow: 0 0 0 3px rgba(245, 130, 32, .18);
+}
+
+.ab-bhavik-page .ab-bv-presence-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+}
+
+.ab-bhavik-page .ab-bv-presence-grid .ab-contact-detail {
+    background: #ffffff;
+}
+
+.ab-bhavik-page .ab-contact-aside-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: #f2f8f7;
+}
+
+.ab-bhavik-page .ab-contact-note-dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: var(--bv-teal);
+}
+
+.ab-bhavik-page .ab-contact-aside-note p {
+    margin: 0;
+    color: var(--bv-muted);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+/* Enquiry Form Fields */
+.ab-bhavik-page .ab-honeypot {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.ab-bhavik-page .ab-contact-form-heading {
+    margin-bottom: 24px;
+}
+
+.ab-bhavik-page .ab-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.ab-bhavik-page .ab-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.ab-bhavik-page .ab-field--full {
+    grid-column: 1 / -1;
+}
+
+.ab-bhavik-page .ab-field label {
+    font-weight: 700;
+    color: var(--bv-ink);
+}
+
+.ab-bhavik-page .ab-field label span {
+    color: var(--bv-orange);
+}
+
+.ab-bhavik-page .ab-field input,
+.ab-bhavik-page .ab-field select,
+.ab-bhavik-page .ab-field textarea {
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 16px;
+    border: 0;
+    border-radius: 14px;
+    background: #f2f7f6;
+    color: var(--bv-ink);
+    font-family: inherit;
+    font-size: 17px;
+    box-shadow: inset 0 2px 4px rgba(16, 38, 56, .06),
+        0 1px 0 #ffffff;
+    transition: background .2s ease, box-shadow .2s ease;
+}
+
+.ab-bhavik-page .ab-field textarea {
+    min-height: 138px;
+    resize: vertical;
+}
+
+.ab-bhavik-page .ab-field input:focus,
+.ab-bhavik-page .ab-field select:focus,
+.ab-bhavik-page .ab-field textarea:focus {
+    outline: none;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 128, 128, .20),
+        0 8px 20px rgba(16, 38, 56, .06);
+}
+
+.ab-bhavik-page .ab-form-foot {
+    margin-top: 22px;
+}
+
+/* =========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================= */
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .ab-bhavik-page .ab-about-hero-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 42px;
+        align-items: stretch;
+    }
+
+    .ab-bhavik-page .ab-bv-presence-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 1180px) {
+    .ab-bhavik-page .ab-pillars,
+    .ab-bhavik-page .ab-way-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .ab-bhavik-page .ab-why-grid,
+    .ab-bhavik-page .ab-bv-ind-grid {
+        gap: 22px;
+    }
+
+    .ab-bhavik-page .ab-story {
+        gap: 36px;
+    }
+}
+
+/* Tablet Portrait & Below (<= 1023px) */
+@media (max-width: 1023px) {
+    .ab-bhavik-page .ab-eyebrow {
+        font-size: 15px;
+        letter-spacing: .13em;
+    }
+
+    .ab-bhavik-page .ab-about-hero-grid,
+    .ab-bhavik-page .ab-story,
+    .ab-bhavik-page .ab-faq-grid,
+    .ab-bhavik-page .ab-contact-layout,
+    .ab-bhavik-page .ab-final-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .ab-bhavik-page .ab-about-hero-art,
+    .ab-bhavik-page .ab-story-visual {
+        height: 500px;
+        min-height: 500px;
+    }
+
+    .ab-bhavik-page .ab-story-copy,
+    .ab-bhavik-page .ab-faq-side,
+    .ab-bhavik-page .ab-contact-aside {
+        order: 1;
+    }
+
+    .ab-bhavik-page .ab-story-visual,
+    .ab-bhavik-page .ab-faq-accordion,
+    .ab-bhavik-page .ab-contact-form {
+        order: 2;
+    }
+
+    .ab-bhavik-page .ab-head-row,
+    .ab-bhavik-page .ab-way-intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .ab-bhavik-page .ab-why-grid,
+    .ab-bhavik-page .ab-bv-ind-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .ab-bhavik-page .ab-bv-contact-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .ab-bhavik-page .ab-contact-detail--full,
+    .ab-bhavik-page .ab-bv-presence-block {
+        grid-column: 1 / -1;
+    }
+
+    .ab-bhavik-page .ab-bv-presence-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .ab-bhavik-page .ab-eyebrow {
+        font-size: 14px;
+        letter-spacing: .13em;
+        line-height: 1.5;
+    }
+
+    .ab-bhavik-page .ab-eyebrow::before {
+        flex-basis: 18px;
+        width: 18px;
+    }
+
+    .ab-bhavik-page h1 {
+        font-size: clamp(32px, 8.2vw, 40px);
+    }
+
+    .ab-bhavik-page h2 {
+        font-size: clamp(27px, 7vw, 34px);
+    }
+
+    .ab-bhavik-page .ab-about-hero-art,
+    .ab-bhavik-page .ab-story-visual {
+        height: 350px;
+        min-height: 350px;
+    }
+
+    .ab-bhavik-page .ab-pillars,
+    .ab-bhavik-page .ab-why-grid,
+    .ab-bhavik-page .ab-bv-ind-grid,
+    .ab-bhavik-page .ab-way-grid,
+    .ab-bhavik-page .ab-bv-contact-details,
+    .ab-bhavik-page .ab-bv-presence-grid,
+    .ab-bhavik-page .ab-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .ab-bhavik-page .ab-pillar,
+    .ab-bhavik-page .ab-why-card,
+    .ab-bhavik-page .ab-way-item,
+    .ab-bhavik-page .ab-contact-aside,
+    .ab-bhavik-page .ab-contact-form {
+        padding: 22px 20px;
+    }
+
+    .ab-bhavik-page .ab-bv-ind-card {
+        padding: 12px 12px 22px;
+        border-radius: 22px;
+    }
+
+    .ab-bhavik-page .ab-bv-product-top {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .ab-bhavik-page .ab-why-tag {
+        text-align: left;
+    }
+
+    .ab-bhavik-page .ab-story-pill {
+        width: 100%;
+        justify-content: flex-start;
+        border-radius: 14px;
+        padding: 10px 14px;
+    }
+
+    .ab-bhavik-page .ab-faq-summary {
+        padding: 18px 20px;
+    }
+
+    .ab-bhavik-page .ab-faq-body {
+        margin: 0 16px 16px;
+        padding: 14px 16px;
+    }
+
+    .ab-bhavik-page .ab-faq-help-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .ab-bhavik-page .ab-about-hero-actions,
+    .ab-bhavik-page .ab-final-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .ab-bhavik-page .ab-about-hero-actions .ab-btn,
+    .ab-bhavik-page .ab-final-actions .ab-btn,
+    .ab-bhavik-page .ab-head-row > .ab-btn,
+    .ab-bhavik-page .ab-way-intro > .ab-btn,
+    .ab-bhavik-page .ab-contact-submit {
+        width: 100%;
+        justify-content: center;
+    }
+}

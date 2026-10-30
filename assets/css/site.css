@@ -1,0 +1,2205 @@
+/* Global shared header and footer. Loaded after page styles so navigation and footer stay consistent everywhere. */
+
+/* Shared document baseline for page templates with content-scoped CSS. */
+body { margin: 0; }
+
+/* Keep the shared site chrome on the same box model on every page. */
+.ab-topbar,
+.ab-topbar *,
+.ab-topbar *::before,
+.ab-topbar *::after,
+.ab-mainnav,
+.ab-mainnav *,
+.ab-mainnav *::before,
+.ab-mainnav *::after,
+.ab-footer,
+.ab-footer *,
+.ab-footer *::before,
+.ab-footer *::after {
+    box-sizing: border-box;
+}
+
+.ab-footer {
+    font-size: 17px;
+    line-height: 1.68;
+    background: radial-gradient(ellipse at 86% 4%, rgba(0, 128, 128, .18), transparent 35%), #0d2232;
+    color: #b5c4ca;
+    padding: 54px 0 24px;
+}
+
+.ab-footer a {
+    text-decoration: none;
+}
+
+.ab-footer .ab-icon {
+    width: 22px;
+    height: 22px;
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ab-footer-layout {
+    display: grid;
+    grid-template-columns: 1.45fr .76fr .8fr 1fr;
+    gap: 34px;
+    padding-bottom: 34px;
+    border-bottom: 1px solid rgba(255, 255, 255, .13);
+}
+
+.ab-footer-brand {
+    display: grid;
+    align-content: start;
+    gap: 16px;
+    max-width: 370px;
+}
+
+.ab-footer-logo {
+    display: flex;
+    width: 190px;
+    height: 54px;
+    flex: none;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.ab-footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ab-footer-brand p {
+    max-width: 36ch;
+    margin: 0;
+    color: #a6b8be;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.ab-footer-contact {
+    display: grid;
+    gap: 8px;
+}
+
+.ab-footer-contact span {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #c0cdd0;
+    font-size: 17px;
+}
+
+.ab-footer-contact .ab-icon {
+    width: 16px;
+    height: 16px;
+    color: #75cbc0;
+}
+
+.ab-footer-nav {
+    display: grid;
+    align-content: start;
+    gap: 11px;
+}
+
+.ab-footer-nav strong,
+.ab-footer-action>strong {
+    margin: 3px 0 7px;
+    color: #fff;
+    font-size: 17px;
+}
+
+.ab-footer-nav a {
+    width: fit-content;
+    color: #b6c7cc;
+    font-size: 17px;
+    transition: color .2s, transform .2s;
+}
+
+.ab-footer-nav a:hover {
+    color: #8fd7cd;
+    transform: translateX(2px);
+}
+
+.ab-footer-action {
+    display: grid;
+    align-content: start;
+    gap: 11px;
+}
+
+.ab-footer-action>strong {
+    margin: 3px 0 0;
+}
+
+.ab-footer-action p {
+    margin: 0;
+    color: #a6b8be;
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.ab-footer-action .ab-btn {
+    display: inline-flex;
+    width: fit-content;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 5px;
+    border: 0 !important;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ff9238 0%, #f58220 54%, #e26d0c 100%);
+    padding: 11px 18px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+    box-shadow: 0 2px 5px rgba(180, 82, 8, .10),
+        0 4px 10px rgba(245, 130, 32, .12),
+        inset 0 1px 0 rgba(255, 255, 255, .28),
+        inset 0 -2px 0 rgba(166, 72, 0, .16);
+    transition: transform .24s cubic-bezier(.22, 1, .36, 1), box-shadow .24s cubic-bezier(.22, 1, .36, 1), background .24s ease;
+}
+
+.ab-footer-action .ab-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, #ff9d4b 0%, #ff8826 52%, #e87312 100%);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(180, 82, 8, .13),
+        0 8px 16px rgba(245, 130, 32, .16),
+        inset 0 1px 0 rgba(255, 255, 255, .34),
+        inset 0 -2px 0 rgba(150, 62, 0, .18);
+}
+
+.ab-footer-action .ab-btn .ab-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.ab-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 21px;
+    color: #82969f;
+    font-size: 17px;
+}
+
+.ab-footer-bottom span:first-child {
+    color: #b6c5c9;
+}
+
+@media (max-width: 850px) {
+.ab-footer-layout {
+        grid-template-columns: 1.2fr 1fr 1fr;
+        gap: 2px;
+    }
+
+    .ab-footer-action {
+        grid-column: 1 / -1;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+
+    .ab-footer-action p {
+        grid-column: 1;
+    }
+
+    .ab-footer-action .ab-btn {
+        grid-column: 2;
+        grid-row: 1 / 3;
+    }
+}
+
+@media (max-width: 600px) {
+.ab-footer-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 26px 18px;
+    }
+
+    .ab-footer-brand,
+    .ab-footer-action {
+        grid-column: 1 / -1;
+    }
+
+    .ab-footer-action {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .ab-footer-action p,
+    .ab-footer-action .ab-btn {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .ab-footer-logo {
+        width: 170px;
+        height: 48px;
+    }
+
+    .ab-footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+/* Global alignment: keep every template on the Home page's shared content grid. */
+:root { --ab-max: 1240px; --ab-nav-h: 82px; }
+/* Shared layout utilities used by every page; keep them out of page stylesheets. */
+.ab-wrap {
+    width: min(var(--ab-max, 1240px), calc(100% - 56px));
+    max-width: 100%;
+    margin-inline: auto;
+}
+.ab-icon {
+    width: 22px;
+    height: 22px;
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.ab-header-contact-link {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+.ab-footer-contact-link {
+    color: inherit;
+    text-decoration: none;
+}
+.ab-icon-sprite {
+    position: absolute;
+    overflow: hidden;
+}
+
+
+
+/* Shared Home-style header. This stylesheet loads after page-specific CSS. */
+.ab-topbar, .ab-mainnav, .ab-topbar *, .ab-mainnav * { font-family: "Reddit Sans", Arial, Helvetica, sans-serif; }
+.ab-topbar { background:#102638; color:#d8e4e9; font-size:14px; line-height:1.68; letter-spacing:.01em; }
+.ab-topbar-inner { min-height:38px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+.ab-contact-line { display:flex; align-items:center; gap:18px; min-width:0; white-space:nowrap; }
+.ab-contact-line span { display:inline-flex; align-items:center; gap:7px; }
+.ab-contact-line .ab-icon {
+  display:block;
+  width:14px;
+  height:14px;
+  flex:0 0 14px;
+  color:#63c6bc;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.ab-ticker { position:relative; display:flex; flex:1; align-items:center; gap:12px; min-width:0; max-width:650px; overflow:hidden; }
+.ab-ticker-label { position:relative; z-index:2; flex:none; padding-right:8px; background:#102638; color:#a9d8d2; font-size:14px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+.ab-ticker-track { flex:1; overflow:hidden; white-space:nowrap; }
+.ab-ticker-items { display:inline-flex; align-items:center; gap:26px; min-width:max-content; animation:ab-marquee 34s linear infinite; }
+.ab-ticker:hover .ab-ticker-items { animation-play-state:paused; }
+.ab-ticker-item { display:inline-flex; align-items:center; gap:8px; }
+.ab-ticker-item b { color:#fff; font-weight:700; }
+.ab-ticker-item em { color:#9ac9c2; font-style:normal; }
+.ab-ticker-dot { width:4px; height:4px; border-radius:50%; background:#f58220; }
+
+.ab-mainnav { position:sticky; top:0; z-index:100; border-bottom:1px solid rgba(220,229,229,.8); background:rgba(255,255,255,.94); box-shadow:0 5px 22px rgba(23,44,57,.045); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); line-height:1.68; }
+.ab-nav-inner { position:relative; display:flex; min-height:var(--ab-nav-h); align-items:center; gap:28px; }
+.ab-nav-inner .ab-logo-slot { position:absolute; top:50%; left:0; z-index:2; transform:translateY(-50%); }
+.ab-logo-slot { display:flex; width:190px; height:53px; flex:none; align-items:center; }
+.ab-logo-slot img { display:block; width:100%; height:100%; object-fit:contain; object-position:left center; }
+.ab-nav-toggle { display:none; width:46px; height:44px; margin-left:auto; align-items:center; justify-content:center; flex-direction:column; gap:5px; border:0; border-radius:12px; background:#fff; color:#142334; box-shadow:0 5px 14px rgba(22,44,62,.09),inset 0 1px 0 #fff; cursor:pointer; position:relative; z-index:130; }
+.ab-nav-toggle .ab-menu-line { display:block; width:22px; height:2px; flex:0 0 2px; border-radius:999px; background:currentColor; opacity:1; transform:none; transition:transform .2s ease, opacity .2s ease; }
+.ab-nav-toggle[aria-expanded="true"] .ab-menu-line:first-child { transform:translateY(7px) rotate(45deg); }
+.ab-nav-toggle[aria-expanded="true"] .ab-menu-line:nth-child(2) { opacity:0; }
+.ab-nav-toggle[aria-expanded="true"] .ab-menu-line:last-child { transform:translateY(-7px) rotate(-45deg); }
+.ab-footer, .ab-footer * { font-family:"Reddit Sans", Arial, Helvetica, sans-serif !important; }
+.ab-nav-links { display:flex; min-width:0; flex:1; align-items:center; justify-content:center; gap:clamp(13px,1.45vw,23px); }
+.ab-nav-menu { display:flex; width:100%; align-items:center; justify-content:center; gap:clamp(13px,1.45vw,23px); margin:0; padding:0; list-style:none; }
+.ab-nav-menu>li { position:relative; display:block; margin:0; padding:0; list-style:none; }
+.ab-nav-menu>li>a { display:block; padding:10px 0; color:#354554; font-size:17px; font-weight:500; line-height:1.35; text-decoration:none; white-space:nowrap; transition:color .2s ease; }
+.ab-nav-menu>li>a:hover,.ab-nav-menu>li.current-menu-item>a,.ab-nav-menu>li.current-menu-ancestor>a { color:#008080; }
+.ab-nav-menu>li.ab-nav-quote { position:absolute; top:50%; right:0; transform:translateY(-50%); }
+.ab-nav-menu>li.ab-nav-quote>a { display:inline-flex; min-height:46px; align-items:center; justify-content:center; gap:8px; border:0 !important; border-radius:12px; background:linear-gradient(180deg,#ff9238 0%,#f58220 54%,#e26d0c 100%); padding:11px 18px; color:#fff; font-size:16px; font-weight:800; line-height:1.2; box-shadow:0 2px 5px rgba(180,82,8,.10),0 4px 10px rgba(245,130,32,.12),inset 0 1px 0 rgba(255,255,255,.28),inset 0 -2px 0 rgba(166,72,0,.16); transition:transform .24s cubic-bezier(.22,1,.36,1),box-shadow .24s cubic-bezier(.22,1,.36,1),background .24s ease; }
+.ab-nav-menu>li.ab-nav-quote>a:hover { transform:translateY(-2px); background:linear-gradient(180deg,#ff9d4b 0%,#ff8826 52%,#e87312 100%); color:#fff; box-shadow:0 4px 8px rgba(180,82,8,.13),0 8px 16px rgba(245,130,32,.16),inset 0 1px 0 rgba(255,255,255,.34),inset 0 -2px 0 rgba(150,62,0,.18); }
+
+@media (max-width:1100px) {
+  :root { --ab-nav-h:72px; }
+  .ab-wrap { width:min(1240px,calc(100% - 42px)); }
+  .ab-nav-inner { gap:17px; }
+  .ab-logo-slot { width:160px; height:48px; }
+  .ab-nav-menu { gap:14px; }
+  .ab-nav-menu>li>a { font-size:16px; }
+  .ab-nav-menu>li.ab-nav-quote>a { padding-inline:13px; font-size:15px; }
+}
+@media (max-width:850px) {
+  .ab-topbar-inner { min-height:36px; }
+  .ab-contact-line { gap:11px; }
+  .ab-ticker { max-width:none; }
+  .ab-nav-toggle { display:flex; }
+  .ab-nav-links { position:absolute; top:calc(100% + 1px); right:-21px; left:-21px; z-index:110; display:none; max-height:calc(100vh - 95px); flex-direction:column; align-items:stretch; justify-content:flex-start; gap:0; overflow-y:auto; background:rgba(255,255,255,.98); padding:15px 21px 20px; box-shadow:0 18px 28px rgba(23,44,57,.12); }
+  .ab-nav-links.is-open { display:flex; }
+  .ab-nav-menu { width:100%; flex-direction:column; align-items:stretch; gap:0; }
+  .ab-nav-menu>li,.ab-nav-menu>li>a { width:100%; }
+  .ab-nav-menu>li>a { padding:12px 4px; white-space:normal; border-bottom:1px solid #edf1f1; }
+  .ab-nav-menu>li.ab-nav-quote { position:static; width:100%; margin-top:13px; transform:none; }
+  .ab-nav-menu>li.ab-nav-quote>a { display:flex; width:100%; min-height:48px; padding:12px 16px; }
+}
+@media (max-width:600px) {
+  :root { --ab-nav-h:66px; }
+  .ab-wrap { width:calc(100% - 36px); }
+  .ab-topbar { font-size:12px; }
+  .ab-topbar-inner { min-height:0; flex-direction:column; align-items:stretch; gap:5px; padding-top:6px; padding-bottom:7px; }
+  .ab-contact-line { width:100%; justify-content:space-between; gap:10px; }
+  .ab-contact-line span { min-width:0; gap:5px; font-size:12px; }
+  .ab-ticker { width:100%; gap:8px; }
+  .ab-ticker-label { padding-right:3px; font-size:11px; }
+  .ab-ticker-items { gap:18px; animation-duration:30s; }
+  .ab-logo-slot { width:142px; height:43px; }
+  .ab-nav-inner { gap:12px; }
+  .ab-nav-toggle { width:43px; height:42px; }
+  .ab-nav-links { right:-18px; left:-18px; padding-right:18px; padding-left:18px; }
+  .ab-nav-menu>li>a { font-size:16px; }
+}
+
+
+/* WordPress primary menu dropdowns — desktop hover/focus and mobile tap disclosures. */
+.ab-nav-menu li { position: relative; }
+.ab-nav-menu li.menu-item-has-children > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.ab-nav-menu > li.menu-item-has-children > a::after {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    margin-top: -4px;
+    border-right: 1.8px solid currentColor;
+    border-bottom: 1.8px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform .18s ease, margin .18s ease;
+}
+.ab-nav-menu > li.menu-item-has-children:hover > a::after,
+.ab-nav-menu > li.menu-item-has-children:focus-within > a::after {
+    margin-top: 4px;
+    transform: rotate(225deg);
+}
+/* Keep submenu hover backgrounds and link padding inside the dropdown panel. */
+.ab-nav-menu .sub-menu,
+.ab-nav-menu .sub-menu *,
+.ab-nav-menu .sub-menu *::before,
+.ab-nav-menu .sub-menu *::after {
+    box-sizing: border-box;
+}
+.ab-nav-menu .sub-menu {
+    overflow: visible;
+}
+.ab-nav-menu .sub-menu > li {
+    max-width: 100%;
+}
+.ab-nav-menu .sub-menu a {
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0;
+}
+.ab-nav-menu .sub-menu {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: -14px;
+    z-index: 120;
+    display: none;
+    min-width: 230px;
+    max-width: min(320px, 88vw);
+    margin: 0;
+    padding: 9px;
+    list-style: none;
+    border: 1px solid #dce5e5;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 16px 38px rgba(23, 44, 57, .15);
+}
+.ab-nav-menu .sub-menu::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    height: 4px;
+}
+.ab-nav-menu li:hover > .sub-menu,
+.ab-nav-menu li:focus-within > .sub-menu,
+.ab-nav-menu li.is-submenu-open > .sub-menu {
+    display: block;
+}
+.ab-nav-menu .sub-menu li {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top:8px;
+}
+.ab-nav-menu .sub-menu a {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: #40515e;
+    font-size: 16px;
+    line-height: 1.4;
+    text-decoration: none;
+    white-space: normal;
+}
+.ab-nav-menu .sub-menu a:hover,
+.ab-nav-menu .sub-menu .current-menu-item > a,
+.ab-nav-menu .sub-menu .current-menu-ancestor > a {
+    background: #eaf3f2;
+    color: #008080;
+}
+.ab-nav-menu .sub-menu .menu-item-has-children > a::after {
+    content: "";
+    float: right;
+    width: 7px;
+    height: 7px;
+    margin: 5px 3px 0 12px;
+    border-top: 1.8px solid currentColor;
+    border-right: 1.8px solid currentColor;
+    transform: rotate(45deg);
+}
+.ab-submenu-toggle { display: none; }
+
+@media (min-width: 851px) {
+    .ab-nav-menu > li > .sub-menu { top: calc(100% + 2px); }
+    .ab-nav-menu > li > .sub-menu .sub-menu {
+        top: -9px;
+        left: calc(100% + 3px);
+    }
+    .ab-nav-menu .sub-menu li:hover > .sub-menu,
+    .ab-nav-menu .sub-menu li:focus-within > .sub-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 850px) {
+    .ab-nav-menu > li.menu-item-has-children {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 44px;
+        align-items: stretch;
+    }
+    .ab-nav-menu > li.menu-item-has-children > a {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        align-items: center;
+        padding: 12px 4px;
+        border-bottom: 1px solid #edf1f1;
+    }
+    .ab-nav-menu > li.menu-item-has-children > a::after {
+        display: none;
+    }
+    .ab-submenu-toggle {
+        display: inline-flex;
+        width: 40px;
+        min-height: 42px;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 10px;
+        background: transparent;
+        color: #008080;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .ab-submenu-toggle:hover,
+    .ab-submenu-toggle:focus-visible {
+        background: #eaf3f2;
+        outline: 2px solid rgba(0,128,128,.25);
+        outline-offset: -2px;
+    }
+    .ab-submenu-toggle::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        margin-top: -4px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg);
+        transition: transform .18s ease, margin .18s ease;
+    }
+    .ab-nav-menu li.is-submenu-open > .ab-submenu-toggle::before {
+        margin-top: 5px;
+        transform: rotate(225deg);
+    }
+    .ab-nav-menu .sub-menu,
+    .ab-nav-menu li:hover > .sub-menu,
+    .ab-nav-menu li:focus-within > .sub-menu {
+        position: static;
+        display: none;
+        grid-column: 1 / -1;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        margin: 0;
+        padding: 5px 0 9px 13px;
+        border: 0;
+        border-radius: 0;
+        background: #f7faf9;
+        box-shadow: none;
+    }
+    .ab-nav-menu li.is-submenu-open > .sub-menu {
+        display: block;
+    }
+    .ab-nav-menu .sub-menu::before { display: none; }
+    .ab-nav-menu .sub-menu a {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    .ab-nav-menu .sub-menu .menu-item-has-children > a::after {
+        display: none;
+    }
+    .ab-nav-menu .sub-menu .menu-item-has-children {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 40px;
+        align-items: stretch;
+    }
+}
+
+/* Shared top-bar material ticker animation. Keep this in the global stylesheet
+   because the header is rendered on every page, not only the About page. */
+@keyframes ab-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ab-ticker-items { animation-duration: 60s; }
+}
+
+
+
+/* Accessible, responsive back-to-top control shared across all pages. */
+.ab-scroll-top {
+    position: fixed;
+    right: max(24px, env(safe-area-inset-right));
+    bottom: max(24px, env(safe-area-inset-bottom));
+    z-index: 999;
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    border: 0 !important;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #ff9238 0%, #f58220 54%, #e26d0c 100%);
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(180, 82, 8, .11),
+        0 5px 12px rgba(245, 130, 32, .14),
+        inset 0 1px 0 rgba(255, 255, 255, .30),
+        inset 0 -2px 0 rgba(166, 72, 0, .16);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity .2s ease, transform .24s cubic-bezier(.22, 1, .36, 1), box-shadow .24s ease, background .2s ease, visibility .2s ease;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.ab-scroll-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+.ab-scroll-top:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, #ff9d4b 0%, #ff8826 52%, #e87312 100%);
+    box-shadow: 0 4px 8px rgba(180, 82, 8, .14),
+        0 8px 16px rgba(245, 130, 32, .18),
+        inset 0 1px 0 rgba(255, 255, 255, .36),
+        inset 0 -2px 0 rgba(150, 62, 0, .18);
+}
+.ab-scroll-top:focus-visible { outline: 3px solid #f58220; outline-offset: 3px; }
+.ab-scroll-top svg { width: 21px; height: 21px; display: block; }
+@media (max-width: 600px) {
+    .ab-scroll-top {
+        right: max(16px, env(safe-area-inset-right));
+        bottom: max(16px, env(safe-area-inset-bottom));
+        width: 44px;
+        height: 44px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ab-scroll-top { transition: none; }
+}
+
+
+/* Mobile hamburger hardening: keep the control above page overlays and guarantee a touch target. */
+@media (max-width: 850px) {
+  header.ab-mainnav#site-header {
+    position: sticky;
+    top: 0;
+    z-index: 99990;
+    isolation: isolate;
+  }
+  header.ab-mainnav#site-header .ab-nav-inner {
+    position: relative;
+    z-index: 1;
+  }
+  header.ab-mainnav#site-header .ab-nav-toggle {
+    position: relative;
+    z-index: 99999 !important;
+    flex: 0 0 46px;
+    pointer-events: auto !important;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  header.ab-mainnav#site-header .ab-nav-toggle * {
+    pointer-events: none;
+  }
+  header.ab-mainnav#site-header .ab-nav-links.is-open {
+    z-index: 99998;
+  }
+}
+@media (max-width: 600px) {
+  header.ab-mainnav#site-header .ab-nav-toggle {
+    flex-basis: 43px;
+  }
+}
+
+/* =========================================================================
+   SHARED BANNER SYSTEM
+   -------------------------------------------------------------------------
+   One source of truth for every page banner (Home, About, Contact, Material,
+   Product Families / Range, Knowledge). This file is enqueued after the page
+   stylesheets, so these rules normalise the page-specific heroes without
+   touching their markup:
+
+     1. one identical banner background + decorative ring on every page,
+     2. identical top and bottom banner spacing on every page,
+     3. copy column and image / gallery column share one stretched grid row,
+        so both sides always start and end on the same vertical line,
+     4. tablet portrait and below stack as "content on top, image below",
+     5. one identical vertical rhythm for the content sections.
+   ========================================================================= */
+
+:root {
+    /* Banner surface: the About hero gradient, used by every page banner. */
+    --ab-banner-bg: radial-gradient(ellipse at 12% 42%, rgba(0, 128, 128, .09), transparent 38%),
+        linear-gradient(118deg, #f7faf9 0%, #f3f7f6 55%, #eaf1f2 100%);
+    /* Identical top / bottom banner spacing. */
+    --ab-banner-pad: 90px;
+    /* Identical column gap between the copy and the image. */
+    --ab-banner-gap: 48px;
+    /* Minimum height of the banner image so short copy still looks balanced. */
+    --ab-banner-media-min: 420px;
+    /* Identical vertical rhythm between content sections. */
+    --ab-section-pad: 100px;
+}
+
+/* 1. One background, one spacing, no per-page dividers. */
+.ab-about-hero,
+.ab-home-slide,
+.ab-contact-hero,
+.ab-prod-hero,
+.ab-products-page .ab-products-hero,
+.kh-hero,
+.kh-article-hero {
+    background: var(--ab-banner-bg);
+    border-bottom: 0;
+    padding-top: var(--ab-banner-pad);
+    padding-bottom: var(--ab-banner-pad);
+}
+
+/* Local stacking context so the decorative ring can sit above the banner
+   background while staying behind the banner content on every page. */
+.ab-home-hero,
+.ab-home-slide,
+.ab-about-hero,
+.ab-contact-hero,
+.ab-prod-hero,
+.ab-products-page .ab-products-hero,
+.kh-hero,
+.kh-article-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* One decorative ring, strictly behind copy and never over banner/slider images. */
+.ab-home-slide:not(.ab-home-slide--background)::before,
+.ab-about-hero::before,
+.ab-contact-hero::before,
+.ab-prod-hero::before,
+.ab-products-page .ab-products-hero::before,
+.kh-hero::before,
+.kh-article-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 540px;
+    height: 540px;
+    top: auto;
+    right: auto;
+    bottom: -240px;
+    left: -210px;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    box-shadow: 0 0 0 1px rgba(0, 128, 128, .06),
+        0 0 0 42px rgba(0, 128, 128, .025),
+        0 0 0 88px rgba(0, 128, 128, .018);
+    pointer-events: none;
+}
+
+/* Remove inner circle overlays that previously sat directly on top of banner images. */
+.ab-contact-art-orbit,
+.ab-products-art-orbit {
+    display: none !important;
+}
+
+/* Ensure banner grids and slider/media frames always sit cleanly above hero backgrounds. */
+.ab-hero-grid,
+.ab-about-hero-grid,
+.ab-contact-hero-grid,
+.ab-prod-hero-grid,
+.ab-products-hero-grid,
+.ab-hero-art,
+.ab-about-hero-art,
+.ab-contact-hero-art,
+.ab-products-hero-art,
+.ab-prod-hero .ab-product-gallery {
+    position: relative;
+    z-index: 2;
+}
+
+/* The ring now lives on the slide itself, so the old hero-level ring is off.
+   This also prevents a doubled ring on the home banner. */
+.ab-home-hero::before,
+.ab-home-hero::after {
+    content: none;
+}
+
+/* 3. One banner grid: copy and image share a single stretched row. */
+.ab-hero-grid,
+.ab-about-hero-grid,
+.ab-contact-hero-grid,
+.ab-prod-hero-grid,
+.ab-products-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+    align-items: stretch;
+    column-gap: var(--ab-banner-gap);
+    row-gap: var(--ab-banner-gap);
+}
+
+/* The copy column fills the row exactly like the image column does, and its
+   content is optically centred, so both columns share the same top and
+   bottom edge on the vertical line. */
+.ab-hero-copy,
+.ab-about-hero-copy,
+.ab-contact-hero-copy,
+.ab-prod-copy,
+.ab-products-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+    max-width: 100%;
+    min-width: 0;
+    order: 1;
+}
+
+/* The image / slider column is always the full height of the same row.
+   Stretch (not height: 100%) keeps the row height definite for the image. */
+.ab-hero-art,
+.ab-home-slide .ab-hero-art,
+.ab-about-hero-art,
+.ab-contact-hero-art,
+.ab-products-hero-art,
+.ab-prod-hero .ab-product-gallery {
+    order: 2;
+    min-height: var(--ab-banner-media-min);
+    align-self: stretch;
+}
+
+/* Material pages: the thumbnail rail floats inside the image from tablet
+   landscape up, so the image itself is the same height as the copy beside it. */
+@media (min-width: 1024px) {
+    .ab-prod-hero .ab-product-gallery {
+        position: relative;
+        display: block;
+        min-width: 0;
+    }
+
+    .ab-prod-hero .ab-product-gallery .ab-prod-art {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        min-height: 0;
+    }
+
+    .ab-prod-hero .ab-product-gallery .ab-gallery-thumbs {
+        position: absolute;
+        left: 50%;
+        bottom: 16px;
+        z-index: 6;
+        width: max-content;
+        max-width: calc(100% - 32px);
+        margin: 0;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, .93);
+        box-shadow: 0 10px 24px rgba(10, 40, 55, .22), inset 0 1px 0 #fff;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* 4. Tablet portrait and below (<= 1023px): content on top, media below.
+   Tablet landscape (>= 1024px) keeps the two-column banner. */
+@media (max-width: 1023px) {
+    :root {
+        --ab-banner-pad: 64px;
+        --ab-banner-gap: 28px;
+        --ab-banner-media-min: 340px;
+    }
+
+    .ab-hero-grid,
+    .ab-home-slide--final .ab-hero-grid,
+    .ab-about-hero-grid,
+    .ab-contact-hero-grid,
+    .ab-prod-hero-grid,
+    .ab-products-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: var(--ab-banner-gap);
+    }
+
+    .ab-home-slide--final .ab-hero-grid {
+        gap: var(--ab-banner-gap);
+    }
+
+    .ab-hero-copy,
+    .ab-about-hero-copy,
+    .ab-contact-hero-copy,
+    .ab-prod-copy,
+    .ab-products-hero-copy,
+    .ab-home-slide--final .ab-hero-copy {
+        order: 1;
+    }
+
+    .ab-hero-art,
+    .ab-home-slide .ab-hero-art,
+    .ab-home-slide--final .ab-hero-art,
+    .ab-about-hero-art,
+    .ab-contact-hero-art,
+    .ab-products-hero-art,
+    .ab-prod-hero .ab-product-gallery {
+        order: 2;
+        width: 100%;
+    }
+
+    .ab-prod-hero .ab-product-gallery {
+        min-height: 0;
+    }
+
+    .ab-prod-hero .ab-product-gallery .ab-prod-art {
+        min-height: var(--ab-banner-media-min);
+    }
+
+    /* Keep background ring anchored behind top copy area when media stacks below. */
+    .ab-home-slide:not(.ab-home-slide--background)::before,
+    .ab-about-hero::before,
+    .ab-contact-hero::before,
+    .ab-prod-hero::before,
+    .ab-products-page .ab-products-hero::before,
+    .kh-hero::before,
+    .kh-article-hero::before {
+        top: -250px;
+        bottom: auto;
+        left: -220px;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --ab-banner-pad: 48px;
+        --ab-banner-gap: 22px;
+        --ab-banner-media-min: 250px;
+    }
+}
+
+/* 5. Identical vertical rhythm between content sections on every page. */
+.ab-section,
+.ab-products-catalog,
+.ab-contact-main,
+.kh-library {
+    padding-top: var(--ab-section-pad);
+    padding-bottom: var(--ab-section-pad);
+}
+
+@media (max-width: 1100px) {
+    :root { --ab-section-pad: 84px; }
+}
+
+@media (max-width: 850px) {
+    :root { --ab-section-pad: 72px; }
+}
+
+@media (max-width: 600px) {
+    :root { --ab-section-pad: 56px; }
+}
+
+
+/* =========================================================================
+   TOUCH / DROPDOWN HARDENING
+   -------------------------------------------------------------------------
+   Mobile and tablet dropdown behaviour: a full-height scrollable panel that
+   never runs past the viewport, 44px+ tap targets, tap-to-open submenus that
+   do not depend on hover, and a locked page behind the open menu.
+   ========================================================================= */
+
+@media (max-width: 850px) {
+    .ab-nav-links {
+        top: 100%;
+        /* Fallback for browsers without dynamic viewport units. */
+        max-height: calc(100vh - var(--ab-nav-h) - 12px);
+        max-height: calc(100dvh - var(--ab-nav-h) - 12px);
+        /* navigation.js refines this against the real header position. */
+        max-height: var(--ab-nav-panel-max, calc(100dvh - var(--ab-nav-h) - 12px));
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+
+    .ab-nav-menu > li > a {
+        min-height: 46px;
+        padding: 13px 4px;
+        align-items: center;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .ab-nav-menu > li.menu-item-has-children > a {
+        min-height: 46px;
+        padding-block: 13px;
+    }
+
+    .ab-nav-menu .sub-menu a {
+        display: flex;
+        min-height: 44px;
+        align-items: center;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .ab-nav-menu > li.menu-item-has-children {
+        grid-template-columns: minmax(0, 1fr) 46px;
+    }
+
+    .ab-submenu-toggle {
+        width: 46px;
+        min-height: 46px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .ab-nav-menu li.is-submenu-open > .ab-submenu-toggle {
+        background: #eaf3f2;
+    }
+}
+
+/* Touch screens of any width never open a dropdown from a hover state. */
+@media (hover: none) {
+    .ab-nav-menu li:hover > .sub-menu {
+        display: none;
+    }
+
+    .ab-nav-menu li.is-submenu-open > .sub-menu {
+        display: block;
+    }
+
+    .ab-nav-menu > li.menu-item-has-children:hover > a::after {
+        margin-top: -4px;
+        transform: rotate(45deg);
+    }
+}
+
+/* Tablet landscape and other wide touch screens keep the desktop navigation,
+   so they get a real tap target for opening submenus. */
+@media (hover: none) and (min-width: 851px) {
+    .ab-nav-menu > li.menu-item-has-children {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 30px;
+        align-items: center;
+    }
+
+    .ab-nav-menu > li.menu-item-has-children > a {
+        display: flex;
+        min-height: 44px;
+        align-items: center;
+    }
+
+    .ab-nav-menu > li.menu-item-has-children > a::after {
+        display: none;
+    }
+
+    .ab-submenu-toggle {
+        display: inline-flex;
+        width: 30px;
+        min-height: 40px;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 8px;
+        background: transparent;
+        color: #008080;
+        cursor: pointer;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .ab-submenu-toggle::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        margin-top: -4px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg);
+        transition: transform .18s ease, margin .18s ease;
+    }
+
+    .ab-nav-menu li.is-submenu-open > .ab-submenu-toggle::before {
+        margin-top: 4px;
+        transform: rotate(225deg);
+    }
+
+    .ab-nav-menu .sub-menu .menu-item-has-children {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 30px;
+        align-items: center;
+    }
+
+    .ab-nav-menu .sub-menu .menu-item-has-children > a {
+        min-height: 44px;
+    }
+
+    .ab-nav-menu .sub-menu .menu-item-has-children > a::after {
+        display: none;
+    }
+}
+
+/* NOTE: never lock the page with `overflow: hidden` on <body> here.
+   Every page stylesheet sets `overflow-x: clip` on html/body, so a body
+   `overflow: hidden` no longer propagates to the viewport - it turns <body>
+   into the scroll container of the sticky header instead, and the header and
+   its hamburger button then scroll out of view. The dropdown panel keeps
+   touch scrolling contained with `overscroll-behavior: contain` instead. */
+
+
+/* =========================================================================
+   EXACT BANNER ROW PARITY
+   -------------------------------------------------------------------------
+   Every banner puts its copy and its image / gallery / note in one grid row
+   with an explicit minimum row height. Both columns stretch to that row, so
+   the left content block and the right image are always exactly the same
+   height, on every page (Contact, Knowledge, Product Range included).
+   ========================================================================= */
+
+/* Only the two-column banner needs a shared row height. Stacked banners keep
+   natural rows so the copy does not get padded out on portrait tablets and
+   phones. */
+@media (min-width: 1024px) {
+    .ab-hero-grid,
+    .ab-about-hero-grid,
+    .ab-contact-hero-grid,
+    .ab-prod-hero-grid,
+    .ab-products-hero-grid,
+    .kh-hero-grid,
+    .kh-article-hero-layout {
+        grid-template-rows: minmax(var(--ab-banner-media-min), auto);
+    }
+}
+
+.ab-hero-grid,
+.ab-about-hero-grid,
+.ab-contact-hero-grid,
+.ab-prod-hero-grid,
+.ab-products-hero-grid,
+.kh-hero-grid,
+.kh-article-hero-layout {
+    align-items: stretch;
+    align-content: center;
+}
+
+/* Copy column fills the row and centres its text inside it. */
+.ab-hero-copy,
+.ab-about-hero-copy,
+.ab-contact-hero-copy,
+.ab-prod-copy,
+.ab-products-hero-copy,
+.kh-hero-grid > div:first-child,
+.kh-article-hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    justify-content: center;
+}
+
+/* Image / gallery / note column is exactly the row height. */
+.ab-contact-hero .ab-contact-hero-art,
+.ab-products-hero .ab-products-hero-art,
+.ab-about-hero .ab-about-hero-art,
+.ab-home-slide .ab-hero-art,
+.kh-hero .kh-hero-note,
+.kh-article-hero .kh-article-featured {
+    height: 100%;
+    min-height: 0;
+    align-self: stretch;
+}
+
+/* The note card on the Knowledge hero reads as a panel of the same height. */
+.kh-hero-note {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* The article banner keeps its featured image at the copy's height too. */
+.kh-article-featured {
+    aspect-ratio: auto;
+}
+
+@media (max-width: 1023px) {
+    .ab-contact-hero .ab-contact-hero-art,
+    .ab-products-hero .ab-products-hero-art,
+    .ab-about-hero .ab-about-hero-art,
+    .ab-home-slide .ab-hero-art,
+    .kh-hero .kh-hero-note,
+    .kh-article-hero .kh-article-featured {
+        height: auto;
+        min-height: var(--ab-banner-media-min);
+    }
+
+    .kh-article-featured {
+        aspect-ratio: 4 / 3;
+        min-height: 0;
+    }
+
+    .kh-hero-grid,
+    .kh-article-hero-layout {
+        grid-template-rows: auto;
+    }
+}
+
+
+/* =========================================================================
+   TABLET LAYOUT SYSTEM (<= 1024px)
+   -------------------------------------------------------------------------
+   One rule set for the two things that repeat across the site:
+     a) every multi-card grid becomes 2 x 2,
+     b) every split section becomes "content on top, image / form below".
+   Banners are the exception: they stay two-column from 1024px up (tablet
+   landscape) and only stack from 1023px down.
+   ========================================================================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* a) Card grids -> two per row. */
+    .ab-family-grid,
+    .ab-market-grid,
+    .ab-process-flow,
+    .ab-enquiry-steps,
+    .ab-resource-grid,
+    .ab-cert-grid,
+    .ab-testimonial-grid,
+    .ab-grade-list,
+    .ab-enquiry-options,
+    .ab-pillars,
+    .ab-way-grid,
+    .ab-principles,
+    .ab-why-grid,
+    .ab-promise-cards,
+    .ab-reach-stats,
+    .ab-character-grid,
+    .ab-forms-grid,
+    .ab-app-grid,
+    .ab-industry-cards,
+    .ab-checklist,
+    .ab-support-cardgrid,
+    .ab-related-grid,
+    .ab-comparison-tips,
+    .ab-range-grid,
+    .kh-card-grid,
+    .kh-consider-grid,
+    .kh-related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* The process connector only works on the single desktop row. */
+    .ab-process-flow {
+        gap: 28px 22px;
+        margin-top: 36px;
+    }
+
+    .ab-process-flow::before {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* b) Split sections -> content first, media / form second. */
+    .ab-credibility-grid,
+    .ab-story,
+    .ab-grade-board,
+    .ab-enquiry-layout,
+    .ab-reach-grid,
+    .ab-promise-grid,
+    .ab-overview-layout,
+    .ab-grade-method-grid,
+    .ab-primary-layout,
+    .ab-industry-layout,
+    .ab-selection-layout,
+    .ab-support-layout,
+    .ab-contact-layout,
+    .ab-faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        align-items: start;
+    }
+
+    /* Copy / list first, visual / form last - regardless of DOM order. */
+    .ab-credibility-copy,
+    .ab-story-copy,
+    .ab-reach-copy,
+    .ab-promise-copy,
+    .ab-grade-panel,
+    .ab-enquiry-copy,
+    .ab-overview-copy,
+    .ab-primary-copy,
+    .ab-industry-copy,
+    .ab-selection-copy,
+    .ab-support-copy,
+    .ab-contact-aside,
+    .ab-faq-side {
+        order: 1;
+    }
+
+    .ab-credibility-visual,
+    .ab-story-visual,
+    .ab-reach-visual,
+    .ab-promise-list,
+    .ab-grade-list,
+    .ab-enquiry-options,
+    .ab-overview-visual,
+    .ab-grade-cards,
+    .ab-product-form,
+    .ab-industry-cards,
+    .ab-checklist,
+    .ab-support-cardgrid,
+    .ab-contact-form,
+    .ab-faq-list,
+    .ab-faq-accordion,
+    .ab-support-layout > div:last-child,
+    .ab-support-layout > :not(.ab-support-copy),
+    .ab-industry-layout > div:last-child,
+    .ab-industry-layout > :not(.ab-industry-copy),
+    .ab-selection-layout > div:last-child,
+    .ab-selection-layout > :not(.ab-selection-copy),
+    .ab-grade-method-grid > div:last-child,
+    .ab-grade-method-grid > :not(.ab-grade-panel) {
+        order: 2;
+    }
+
+    /* Stacked media keeps a usable height without forcing equal rows. */
+    .ab-story-visual,
+    .ab-credibility-visual {
+        min-height: 320px;
+    }
+
+    /* Every split section that carries a form: content on top, form below.
+       The form has no `order` of its own, so without this it keeps the
+       default order 0 and jumps above the copy. */
+    .ab-enquiry-layout > form,
+    .ab-enquiry-layout > .ab-form-card,
+    .ab-primary-layout > form,
+    .ab-primary-layout > .ab-product-form,
+    .ab-contact-layout > form,
+    .ab-contact-layout > .ab-contact-form,
+    .ab-support-layout > form,
+    .ab-industry-layout > form {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================================
+   CONTACT CHANNELS & ICON BOX CONSISTENCY
+   -------------------------------------------------------------------------
+   Topbar and footer keep the orange accent; contact section icon boxes and
+   page icon boxes share the unified theme teal (#008080 on #e4f1ef).
+   ========================================================================= */
+
+.ab-topbar .ab-contact-line .ab-icon,
+.ab-footer-contact .ab-icon {
+    color: #f58220;
+}
+
+.ab-contact-hero-meta .ab-contact-meta-mark,
+.ab-contact-hero-meta .ab-contact-meta-mark--orange,
+.ab-contact-hero-meta .ab-contact-meta-mark--whatsapp,
+.ab-contact-detail-icon,
+.ab-contact-detail-icon--orange {
+    background: #e4f1ef;
+    color: var(--ab-teal, #008080);
+    box-shadow: 0 6px 14px rgba(17, 48, 56, .10), inset 0 1px 2px rgba(255, 255, 255, .92), inset 0 -2px 4px rgba(0, 128, 128, .08);
+}
+
+.ab-contact-hero-meta .ab-contact-meta-mark--whatsapp .ab-icon {
+    width: 19px;
+    height: 19px;
+    color: var(--ab-teal, #008080);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+}
+
+.ab-contact-hero-meta > a.ab-contact-meta-item--whatsapp:hover .ab-contact-meta-mark--whatsapp {
+    background: #d8ece8;
+}
+
+.ab-footer-contact .ab-footer-whatsapp {
+    color: #c0cdd0;
+    text-decoration: none;
+}
+
+/* WhatsApp keeps its own green accent in the footer contact list. */
+.ab-footer-contact .ab-footer-whatsapp-line .ab-icon {
+    color: #25d366;
+}
+
+
+/* =========================================================================
+   EYEBROW SYSTEM
+   -------------------------------------------------------------------------
+   One eyebrow look on every page and at every size (font, weight, tracking,
+   colour and the orange dash), and the dash is aligned to the START of the
+   label so a two-line eyebrow still reads cleanly: the line stays with the
+   first line instead of floating between the two.
+   ========================================================================= */
+
+.ab-eyebrow,
+.kh-eyebrow,
+.ab-contact-page .ab-eyebrow,
+.ab-products-page .ab-eyebrow {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 0;
+    color: #008080;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    line-height: 1.5;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.ab-eyebrow::before,
+.kh-eyebrow::before,
+.ab-eyebrow:before,
+.kh-eyebrow:before,
+.ab-contact-page .ab-eyebrow::before,
+.ab-products-page .ab-eyebrow::before {
+    content: "";
+    flex: 0 0 24px;
+    width: 24px;
+    height: 2px;
+    /* Optically centred on the first line, not on the whole wrapped label. */
+    margin-top: calc(.7em - 1px);
+    border-radius: 4px;
+    background: #f58220;
+}
+
+@media (max-width: 1023px) {
+    .ab-eyebrow,
+    .kh-eyebrow,
+    .ab-contact-page .ab-eyebrow,
+    .ab-products-page .ab-eyebrow {
+        font-size: 15px;
+        letter-spacing: .13em;
+    }
+}
+
+@media (max-width: 600px) {
+    .ab-eyebrow,
+    .kh-eyebrow,
+    .ab-contact-page .ab-eyebrow,
+    .ab-products-page .ab-eyebrow {
+        font-size: 14px;
+        letter-spacing: .13em;
+        line-height: 1.5;
+    }
+
+    .ab-eyebrow::before,
+    .kh-eyebrow::before,
+    .ab-eyebrow:before,
+    .kh-eyebrow:before,
+    .ab-contact-page .ab-eyebrow::before,
+    .ab-products-page .ab-eyebrow::before {
+        flex-basis: 18px;
+        width: 18px;
+    }
+}
+
+
+/* =========================================================================
+   FINAL BANNER SPACING GUARANTEE
+   -------------------------------------------------------------------------
+   Last word in the cascade: every page banner uses the same top and bottom
+   spacing at every breakpoint (this block loads after all page stylesheets).
+   ========================================================================= */
+
+.ab-home-slide,
+.ab-about-hero,
+.ab-contact-hero,
+.ab-prod-hero,
+.ab-products-page .ab-products-hero,
+.kh-hero,
+.kh-article-hero {
+    padding-top: var(--ab-banner-pad);
+    padding-bottom: var(--ab-banner-pad);
+}
+
+
+/* =========================================================================
+   BANNER EDGE ALIGNMENT (v1.4.5)
+   -------------------------------------------------------------------------
+   The right-hand image must start exactly where the copy starts (its eyebrow)
+   and end exactly where the last piece of copy ends. So the row height is no
+   longer a fixed minimum: it is driven by the copy itself, the copy is top
+   aligned, and the image column simply stretches to that same height. Both
+   columns therefore share one top edge and one bottom edge on every banner
+   (Home, About, Contact, Material, Product Families/Range, Knowledge).
+   ========================================================================= */
+
+@media (min-width: 1024px) {
+    .ab-hero-grid,
+    .ab-about-hero-grid,
+    .ab-contact-hero-grid,
+    .ab-prod-hero-grid,
+    .ab-products-hero-grid,
+    .kh-hero-grid,
+    .kh-article-hero-layout {
+        /* The copy defines the row; no artificial minimum height. */
+        grid-template-rows: auto;
+        align-items: stretch;
+        align-content: start;
+    }
+
+    /* Copy starts at the top of the row: the eyebrow is the first edge. */
+    .ab-hero-copy,
+    .ab-about-hero-copy,
+    .ab-contact-hero-copy,
+    .ab-prod-copy,
+    .ab-products-hero-copy,
+    .kh-hero-grid > div:first-child,
+    .kh-article-hero-copy {
+        justify-content: flex-start;
+        align-self: stretch;
+    }
+
+    /* Image / gallery / note ends where the copy ends. */
+    .ab-home-slide .ab-hero-art,
+    .ab-about-hero .ab-about-hero-art,
+    .ab-contact-hero .ab-contact-hero-art,
+    .ab-products-hero .ab-products-hero-art,
+    .kh-hero .kh-hero-note,
+    .kh-article-hero .kh-article-featured,
+    .ab-prod-hero .ab-product-gallery {
+        height: auto;
+        min-height: 0;
+        align-self: stretch;
+    }
+
+    /* The article featured image keeps filling its (copy-height) area. */
+    .kh-article-hero .kh-article-featured {
+        aspect-ratio: auto;
+    }
+
+    .kh-article-hero .kh-article-featured .kh-featured-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+/* =========================================================================
+   TABLET PORTRAIT / MOBILE BANNER MEDIA
+   -------------------------------------------------------------------------
+   A tall image keeps the banner media from looking like a wide landscape
+   strip: 500px on portrait tablets, 350px on phones, for images and for both
+   sliders (home gallery and the material product gallery).
+   ========================================================================= */
+
+@media (max-width: 1023px) {
+    .ab-home-slide .ab-hero-art,
+    .ab-home-slide--final .ab-hero-art--rotating,
+    .ab-about-hero .ab-about-hero-art,
+    .ab-contact-hero .ab-contact-hero-art,
+    .ab-products-hero .ab-products-hero-art,
+    .kh-article-hero .kh-article-featured {
+        height: 500px;
+        min-height: 500px;
+        max-height: none;
+        aspect-ratio: auto;
+    }
+
+    /* Material slider: 500px picture with the thumbnail rail underneath. */
+    .ab-prod-hero .ab-product-gallery {
+        height: auto;
+        min-height: 0;
+        grid-template-rows: auto auto;
+        gap: 12px;
+    }
+
+    .ab-prod-hero .ab-product-gallery .ab-prod-art {
+        height: 500px;
+        min-height: 500px;
+    }
+}
+
+/* Phones: 350px so the media never dominates the first screen. */
+@media (max-width: 600px) {
+    .ab-home-slide .ab-hero-art,
+    .ab-home-slide--final .ab-hero-art--rotating,
+    .ab-about-hero .ab-about-hero-art,
+    .ab-contact-hero .ab-contact-hero-art,
+    .ab-products-hero .ab-products-hero-art,
+    .kh-article-hero .kh-article-featured,
+    .ab-prod-hero .ab-product-gallery .ab-prod-art {
+        height: 350px;
+        min-height: 350px;
+        max-height: none;
+    }
+
+    /* Section visuals follow the same 350px rule on phones. */
+    .ab-story-visual,
+    .ab-credibility-visual {
+        height: 350px;
+        min-height: 350px;
+    }
+}
+
+
+/* =========================================================================
+   ABOUT — FAQ SECTION ON TABLET / MOBILE
+   -------------------------------------------------------------------------
+   Eyebrow, heading, filter tabs and the help card stay together at the top of
+   the section and the FAQ list sits below them. The help card button is auto
+   width on tablet portrait instead of stretching across the full column.
+   ========================================================================= */
+
+@media (max-width: 1024px) {
+    .ab-faq-section .ab-faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        align-items: start;
+    }
+
+    .ab-faq-section .ab-faq-side {
+        order: 1;
+    }
+
+    .ab-faq-section .ab-faq-main {
+        order: 2;
+    }
+
+    .ab-faq-section .ab-faq-side-sticky {
+        position: static;
+        top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    /* Tabs read as a row of chips above the list, never a full-width column. */
+    .ab-faq-section .ab-faq-filter-pills {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: visible;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    .ab-faq-section .ab-faq-tab {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+        padding: 9px 14px;
+        border-radius: 999px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* "Start an enquiry" must not stretch full width on tablet portrait. */
+    .ab-faq-section .ab-faq-help-actions {
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .ab-faq-section .ab-faq-help-actions .ab-btn {
+        width: auto;
+        max-width: 100%;
+        flex: 0 0 auto;
+        min-height: 48px;
+        padding: 12px 18px;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .ab-faq-section .ab-faq-help-card {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================================
+   MATERIAL PAGES — "READY WHEN YOU ARE" CARD
+   -------------------------------------------------------------------------
+   Tablet portrait: the copy sits on top and its three buttons move below it,
+   wrapping onto two rows instead of squeezing into the right-hand corner.
+   ========================================================================= */
+
+@media (max-width: 1024px) {
+    .ab-secondary-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .ab-secondary-copy {
+        max-width: 100%;
+    }
+
+    .ab-secondary-actions {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+        flex: 1 1 auto;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .ab-secondary-actions .ab-btn {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================================
+   CONTACT PAGE — SECOND SECTION ALIGNMENT
+   -------------------------------------------------------------------------
+   On tablet portrait and below the intro block sits top-left with the form
+   instead of being centred.
+   ========================================================================= */
+
+@media (max-width: 1024px) {
+    .ab-contact-page .ab-contact-intro {
+        max-width: 100%;
+        margin: 0 0 28px;
+        text-align: left;
+    }
+
+    .ab-contact-page .ab-contact-intro > p {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .ab-contact-page .ab-contact-notice {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .ab-contact-page .ab-contact-layout {
+        align-items: start;
+    }
+
+    .ab-contact-page .ab-contact-aside,
+    .ab-contact-page .ab-contact-form {
+        text-align: left;
+    }
+}
+
+
+/* =========================================================================
+   TABLET LANDSCAPE BANNERS (1024px – 1366px)
+   -------------------------------------------------------------------------
+   A tablet held in landscape (iPad 1024x768, 11" 1194x834, 12.9" 1366x1024)
+   keeps the two-column banner of the desktop, and everything that used to
+   drift page by page is pinned here:
+
+     - one banner top / bottom spacing for every page,
+     - the copy column and the image column are the same size (equal width
+       AND the image stretches to the copy's exact height),
+     - the eyebrow keeps the desktop size, weight and tracking, and its orange
+       dash stays on the first line,
+     - images and sliders stay full height instead of the portrait 500px box.
+   ========================================================================= */
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+    :root {
+        --ab-banner-pad: 90px;
+        --ab-banner-gap: 42px;
+    }
+
+    /* 1. One banner spacing, stated explicitly for every page banner. */
+    .ab-home-slide,
+    .ab-about-hero,
+    .ab-contact-hero,
+    .ab-prod-hero,
+    .ab-products-page .ab-products-hero,
+    .kh-hero,
+    .kh-article-hero {
+        padding-top: var(--ab-banner-pad);
+        padding-bottom: var(--ab-banner-pad);
+        margin: 0;
+    }
+
+    /* 2. Same size on both sides: equal columns, one shared row. */
+    .ab-hero-grid,
+    .ab-about-hero-grid,
+    .ab-contact-hero-grid,
+    .ab-prod-hero-grid,
+    .ab-products-hero-grid,
+    .kh-hero-grid,
+    .kh-article-hero-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto;
+        column-gap: var(--ab-banner-gap);
+        row-gap: var(--ab-banner-gap);
+        align-items: stretch;
+        align-content: start;
+    }
+
+    /* Copy defines the height and starts on its eyebrow. */
+    .ab-hero-copy,
+    .ab-about-hero-copy,
+    .ab-contact-hero-copy,
+    .ab-prod-copy,
+    .ab-products-hero-copy,
+    .kh-hero-grid > div:first-child,
+    .kh-article-hero-copy {
+        justify-content: flex-start;
+        align-self: stretch;
+        max-width: 100%;
+    }
+
+    /* The right container is exactly the left container's height. */
+    .ab-home-slide .ab-hero-art,
+    .ab-about-hero .ab-about-hero-art,
+    .ab-contact-hero .ab-contact-hero-art,
+    .ab-products-hero .ab-products-hero-art,
+    .kh-hero .kh-hero-note,
+    .kh-article-hero .kh-article-featured,
+    .ab-prod-hero .ab-product-gallery {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        align-self: stretch;
+        aspect-ratio: auto;
+        width: 100%;
+    }
+
+    .kh-article-hero .kh-article-featured .kh-featured-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* 3. One eyebrow look, identical to the desktop banner. */
+    .ab-eyebrow,
+    .kh-eyebrow,
+    .ab-contact-page .ab-eyebrow,
+    .ab-products-page .ab-eyebrow {
+        align-items: flex-start;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: .13em;
+        line-height: 1.5;
+        color: #008080;
+    }
+
+    .ab-eyebrow::before,
+    .kh-eyebrow::before,
+    .ab-eyebrow:before,
+    .kh-eyebrow:before,
+    .ab-contact-page .ab-eyebrow::before,
+    .ab-products-page .ab-eyebrow::before {
+        flex: 0 0 24px;
+        width: 24px;
+        height: 2px;
+        margin-top: calc(.7em - 1px);
+        background: #f58220;
+    }
+}
+
+
+/* =========================================================================
+   SECTION RHYTHM SYSTEM (v1.5.0)
+   -------------------------------------------------------------------------
+   One vertical rhythm for the furniture inside every section of every page:
+
+       eyebrow --14px--> heading --16px--> paragraph --20px--> points/action
+
+   and one gap (42px) between a section's heading block and the content under
+   it. The values step down once at tablet and once at phone, so a section is
+   never tight on one page and loose on another.
+
+   Why this block exists: each page stylesheet used to state its own numbers
+   (eyebrow with no gap at all, headings with 12–18px, paragraphs with 18–28px,
+   section heads ending at 40/42/46px). This is the single owner now.
+   ========================================================================= */
+
+:root {
+    /* Gap from the eyebrow to the heading under it. */
+    --ab-rhythm-eyebrow: 14px;
+    /* Heading to the paragraph that explains it. */
+    --ab-rhythm-heading: 16px;
+    /* Paragraph to the points list or the action button. */
+    --ab-rhythm-body: 20px;
+    /* Between repeated points inside a list. */
+    --ab-rhythm-points: 10px;
+    /* Heading block to the cards / panel under it. */
+    --ab-rhythm-head: 42px;
+}
+
+@media (max-width: 1100px) {
+    :root {
+        --ab-rhythm-eyebrow: 13px;
+        --ab-rhythm-heading: 15px;
+        --ab-rhythm-body: 18px;
+        --ab-rhythm-points: 9px;
+        --ab-rhythm-head: 34px;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --ab-rhythm-eyebrow: 12px;
+        --ab-rhythm-heading: 13px;
+        --ab-rhythm-body: 16px;
+        --ab-rhythm-points: 8px;
+        --ab-rhythm-head: 26px;
+    }
+}
+
+/* 1. The containers that hold a section's eyebrow, heading, paragraph and
+      action — banners, section heads and two-column copy panels. */
+:is(.ab-section-head,
+    .ab-contact-intro,
+    .ab-products-section-head,
+    .ab-promise-copy,
+    .ab-story-copy,
+    .ab-reach-copy,
+    .ab-final-copy,
+    .ab-industry-copy,
+    .ab-faq-side-sticky,
+    .ab-overview-copy,
+    .ab-primary-copy,
+    .ab-secondary-copy,
+    .ab-selection-copy,
+    .ab-support-copy,
+    .ab-comparison-copy,
+    .ab-credibility-copy,
+    .ab-strength-copy,
+    .ab-enquiry-copy,
+    .kh-enquiry-copy,
+    .ab-about-hero-copy,
+    .ab-contact-hero-copy,
+    .ab-hero-copy,
+    .ab-prod-copy,
+    .ab-products-hero-copy,
+    .kh-article-hero-copy,
+    .ab-home-slide--copy,
+    .ab-contact-aside-heading,
+    .ab-contact-form-heading) > * {
+    margin-top: 0;
+}
+
+/* 2. Eyebrow to heading. The eyebrow is inline-flex, where a vertical margin
+      does nothing, so it becomes a fit-content block here — same look, and
+      the gap finally exists. */
+:is(.ab-section-head,
+    .ab-contact-intro,
+    .ab-products-section-head,
+    .ab-promise-copy,
+    .ab-story-copy,
+    .ab-reach-copy,
+    .ab-final-copy,
+    .ab-industry-copy,
+    .ab-faq-side-sticky,
+    .ab-overview-copy,
+    .ab-primary-copy,
+    .ab-secondary-copy,
+    .ab-selection-copy,
+    .ab-support-copy,
+    .ab-comparison-copy,
+    .ab-credibility-copy,
+    .ab-strength-copy,
+    .ab-enquiry-copy,
+    .kh-enquiry-copy,
+    .ab-about-hero-copy,
+    .ab-contact-hero-copy,
+    .ab-hero-copy,
+    .ab-prod-copy,
+    .ab-products-hero-copy,
+    .kh-article-hero-copy,
+    .ab-home-slide--copy,
+    .ab-contact-aside-heading,
+    .ab-contact-form-heading) > .ab-eyebrow {
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: var(--ab-rhythm-eyebrow);
+}
+
+/* 2b. The product directory banner scopes its eyebrow rule to the page wrapper,
+       which is one class more specific than the shared rule above. */
+.ab-products-page .ab-products-hero-copy > .ab-eyebrow {
+    margin-bottom: var(--ab-rhythm-eyebrow);
+}
+
+/* 3. Heading to paragraph. */
+:is(.ab-section-head,
+    .ab-contact-intro,
+    .ab-products-section-head,
+    .ab-promise-copy,
+    .ab-story-copy,
+    .ab-reach-copy,
+    .ab-final-copy,
+    .ab-industry-copy,
+    .ab-faq-side-sticky,
+    .ab-overview-copy,
+    .ab-primary-copy,
+    .ab-secondary-copy,
+    .ab-selection-copy,
+    .ab-support-copy,
+    .ab-comparison-copy,
+    .ab-credibility-copy,
+    .ab-strength-copy,
+    .ab-enquiry-copy,
+    .kh-enquiry-copy,
+    .ab-about-hero-copy,
+    .ab-contact-hero-copy,
+    .ab-hero-copy,
+    .ab-prod-copy,
+    .ab-products-hero-copy,
+    .kh-article-hero-copy,
+    .ab-home-slide--copy,
+    .ab-contact-aside-heading,
+    .ab-contact-form-heading) > :is(h1, h2, h3, h4) {
+    margin: 0 0 var(--ab-rhythm-heading);
+}
+
+/* 4. Paragraph to the next paragraph, points list or action. */
+:is(.ab-section-head,
+    .ab-contact-intro,
+    .ab-products-section-head,
+    .ab-promise-copy,
+    .ab-story-copy,
+    .ab-reach-copy,
+    .ab-final-copy,
+    .ab-industry-copy,
+    .ab-faq-side-sticky,
+    .ab-overview-copy,
+    .ab-primary-copy,
+    .ab-secondary-copy,
+    .ab-selection-copy,
+    .ab-support-copy,
+    .ab-comparison-copy,
+    .ab-credibility-copy,
+    .ab-strength-copy,
+    .ab-enquiry-copy,
+    .kh-enquiry-copy,
+    .ab-about-hero-copy,
+    .ab-contact-hero-copy,
+    .ab-hero-copy,
+    .ab-prod-copy,
+    .ab-products-hero-copy,
+    .kh-article-hero-copy,
+    .ab-home-slide--copy,
+    .ab-contact-aside-heading,
+    .ab-contact-form-heading) > p {
+    margin: 0 0 var(--ab-rhythm-body);
+}
+
+/* 4b. `p.lead` carries an extra class in the page sheets, so it needs the same
+       specificity to inherit the shared paragraph gap. */
+:is(.ab-section-head,
+    .ab-contact-intro,
+    .ab-products-section-head,
+    .ab-promise-copy,
+    .ab-story-copy,
+    .ab-reach-copy,
+    .ab-final-copy,
+    .ab-industry-copy,
+    .ab-faq-side-sticky,
+    .ab-about-hero-copy,
+    .ab-contact-hero-copy,
+    .ab-hero-copy,
+    .ab-prod-copy,
+    .ab-products-hero-copy,
+    .kh-article-hero-copy,
+    .ab-home-slide--copy) > p.lead {
+    margin: 0 0 var(--ab-rhythm-body);
+}
+
+/* 5. Nothing trails an empty gap at the end of a heading block. */
+:is(.ab-section-head,
+    .ab-contact-intro,
+    .ab-products-section-head,
+    .ab-promise-copy,
+    .ab-story-copy,
+    .ab-reach-copy,
+    .ab-final-copy,
+    .ab-industry-copy,
+    .ab-faq-side-sticky,
+    .ab-overview-copy,
+    .ab-primary-copy,
+    .ab-secondary-copy,
+    .ab-selection-copy,
+    .ab-support-copy,
+    .ab-comparison-copy,
+    .ab-credibility-copy,
+    .ab-strength-copy,
+    .ab-enquiry-copy,
+    .kh-enquiry-copy,
+    .ab-about-hero-copy,
+    .ab-contact-hero-copy,
+    .ab-hero-copy,
+    .ab-prod-copy,
+    .ab-products-hero-copy,
+    .kh-article-hero-copy,
+    .ab-home-slide--copy,
+    .ab-contact-aside-heading,
+    .ab-contact-form-heading) > :last-child {
+    margin-bottom: 0;
+}
+
+/* 6. One gap between a heading block and the content beneath it. */
+.ab-section-head,
+.ab-head-row,
+.ab-contact-intro,
+.ab-products-section-head {
+    margin-bottom: var(--ab-rhythm-head);
+}
+
+/* The step grid closes the way-section; it follows the intro block. */
+.ab-way-grid {
+    margin-top: var(--ab-rhythm-head);
+}
+
+/* 7. Points inside the theme's card lists share one gap. */
+.ab-pillar ul,
+.ab-why-card ul,
+.ab-promise-list {
+    gap: var(--ab-rhythm-points);
+}
+
+/* When the promise list is the second column of the promise grid, the grid
+   gap already separates it from the copy. */
+.ab-promise-grid > .ab-promise-list {
+    margin-top: 0;
+}
+
+
+
+/* ==========================================================================
+   Footer additions — social icons (Abiroverseas + Bhavik) and the WhatsApp
+   scanner image under the "Request a quote" button. Styles are scoped to the
+   shared footer so both footer.php and footer-bhavik.php use them.
+   ========================================================================== */
+
+.ab-footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 2px 0;
+}
+
+.ab-footer-social .ab-social-link {
+    display: inline-grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .07);
+    color: #c6d5d9;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14);
+    transition: transform .22s ease, background .22s ease, color .22s ease, box-shadow .22s ease;
+}
+
+.ab-footer-social .ab-social-link svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+.ab-footer-social .ab-social-link:hover,
+.ab-footer-social .ab-social-link:focus-visible {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, #ff9238 0%, #f58220 100%);
+    color: #ffffff;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .24), 0 8px 18px rgba(0, 0, 0, .28);
+}
+
+.ab-footer-social .ab-social-link:focus-visible {
+    outline: 2px solid #75cbc0;
+    outline-offset: 3px;
+}
+
+.ab-footer-qr {
+    margin: 12px 0 0;
+}
+
+.ab-footer-qr img {
+    display: block;
+    width: 132px;
+    height: 132px;
+    max-width: 100%;
+    padding: 8px;
+    border-radius: 14px;
+    background: #ffffff;
+    object-fit: contain;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+}
+
+

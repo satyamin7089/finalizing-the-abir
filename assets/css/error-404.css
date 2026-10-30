@@ -1,0 +1,670 @@
+/* =========================================================================
+   ERROR 404 PAGE — DEDICATED STANDALONE STYLESHEET (error-404.css)
+   -------------------------------------------------------------------------
+   Loaded exclusively on is_404() via ab_enqueue_assets() in functions.php.
+   Zero 404-specific selectors in site.css.
+   ========================================================================= */
+
+.ab-404-page,
+.ab-404-page *,
+.ab-404-page *::before,
+.ab-404-page *::after {
+    box-sizing: border-box;
+}
+
+.ab-404-page {
+    --e404-ink: #142334;
+    --e404-muted: #536572;
+    --e404-teal: #008080;
+    --e404-teal-deep: #0b5d63;
+    --e404-orange: #f58220;
+    --e404-surface-3d: 0 2px 5px rgba(16, 38, 56, .04),
+        0 14px 30px -6px rgba(16, 38, 56, .09),
+        0 28px 54px -14px rgba(13, 62, 68, .12),
+        inset 0 1px 0 rgba(255, 255, 255, .96);
+    --e404-surface-hover: 0 6px 12px rgba(16, 38, 56, .06),
+        0 22px 44px -8px rgba(16, 38, 56, .13),
+        0 38px 70px -14px rgba(0, 128, 128, .17),
+        inset 0 1px 0 #ffffff;
+    --e404-btn-3d: 0 2px 5px rgba(180, 82, 8, .10),
+        0 4px 10px rgba(245, 130, 32, .12),
+        inset 0 1px 0 rgba(255, 255, 255, .28),
+        inset 0 -2px 0 rgba(166, 72, 0, .16);
+    --e404-btn-3d-hover: 0 4px 8px rgba(180, 82, 8, .13),
+        0 8px 16px rgba(245, 130, 32, .16),
+        inset 0 1px 0 rgba(255, 255, 255, .34),
+        inset 0 -2px 0 rgba(150, 62, 0, .18);
+    background: #ffffff;
+    color: var(--e404-ink);
+    font-family: "Reddit Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.62;
+    overflow-x: clip;
+}
+
+.ab-404-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Canonical Eyebrow — Matched 1:1 Across Theme */
+.ab-404-page .ab-eyebrow {
+    display: flex;
+    align-items: flex-start;
+    width: fit-content;
+    max-width: 100%;
+    gap: 10px;
+    margin: 0 0 var(--ab-rhythm-eyebrow, 14px);
+    color: #008080;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    line-height: 1.5;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.ab-404-page .ab-eyebrow::before {
+    content: "";
+    flex: 0 0 24px;
+    width: 24px;
+    height: 2px;
+    margin-top: calc(.7em - 1px);
+    border-radius: 4px;
+    background: #f58220;
+}
+
+/* Unified SVG & 3D Teal Icon Boxes */
+.ab-404-page .ab-icon {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.85;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+.ab-404-page .ab-icon-box {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border-radius: 14px;
+    border: 0;
+    background: linear-gradient(145deg, #ecf6f4 0%, #dfefec 100%);
+    color: var(--e404-teal);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 7px 16px rgba(17, 48, 56, .10),
+        inset 0 1px 2px rgba(255, 255, 255, .95),
+        inset 0 -2px 4px rgba(0, 128, 128, .08);
+    transition: transform .24s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .24s ease;
+}
+
+.ab-404-page .ab-icon-box .ab-icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* Borderless 3D Orange Buttons (Subtle Resting & Hover Shadows) */
+.ab-404-page .ab-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 13px 24px;
+    border: 0 !important;
+    outline: none;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ff9238 0%, #f58220 54%, #e26d0c 100%);
+    color: #ffffff !important;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: .01em;
+    box-shadow: var(--e404-btn-3d);
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: transform .24s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .24s cubic-bezier(.22, 1, .36, 1),
+        background .24s ease;
+}
+
+.ab-404-page .ab-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, #ff9d4b 0%, #ff8826 52%, #e87312 100%);
+    color: #ffffff !important;
+    box-shadow: var(--e404-btn-3d-hover);
+}
+
+.ab-404-page .ab-btn:active {
+    transform: translateY(-1px);
+}
+
+.ab-404-page .ab-btn:focus-visible {
+    outline: 3px solid rgba(245, 130, 32, .45);
+    outline-offset: 3px;
+}
+
+.ab-404-page .ab-404-btn-back:hover .ab-404-icon-back {
+    transform: translateX(-3px);
+}
+
+.ab-404-page .ab-404-icon-back {
+    transition: transform .22s ease;
+}
+
+/* =========================================================================
+   1. SPLIT EQUAL-HEIGHT 404 HERO
+   ========================================================================= */
+
+.ab-404-page .ab-404-hero {
+    padding: var(--ab-banner-pad, clamp(58px, 6.5vw, 90px)) 0;
+    background: radial-gradient(circle at 86% 18%, rgba(0, 128, 128, .08), transparent 38%),
+        radial-gradient(circle at 10% 85%, rgba(245, 130, 32, .06), transparent 34%),
+        linear-gradient(180deg, #f4faf9 0%, #ffffff 100%);
+}
+
+.ab-404-page .ab-404-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.14fr) minmax(0, .86fr);
+    grid-template-rows: auto;
+    gap: clamp(32px, 4.5vw, 52px);
+    align-items: stretch;
+    align-content: start;
+}
+
+.ab-404-page .ab-404-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: stretch;
+    min-width: 0;
+}
+
+.ab-404-page h1 {
+    margin: 0 0 18px;
+    color: var(--e404-ink);
+    font-size: clamp(36px, 4.1vw, 54px);
+    font-weight: 800;
+    line-height: 1.09;
+    letter-spacing: -.03em;
+}
+
+.ab-404-page h1 span {
+    color: var(--e404-teal);
+}
+
+.ab-404-page .ab-404-lead {
+    margin: 0 0 22px;
+    max-width: 630px;
+    color: var(--e404-muted);
+    font-size: 17px;
+    line-height: 1.66;
+}
+
+/* Requested Route Pill & Dynamic Referrer Hint */
+.ab-404-page .ab-404-route-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 26px;
+}
+
+.ab-404-page .ab-404-route-pill {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
+    max-width: 100%;
+    padding: 9px 15px;
+    border-radius: 14px;
+    background: linear-gradient(155deg, #eef6f5 0%, #e4f0ee 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95),
+        0 4px 12px rgba(16, 38, 56, .05);
+    font-size: 15px;
+}
+
+.ab-404-page .ab-404-route-dot {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 8px;
+    border-radius: 50%;
+    background: var(--e404-orange);
+    box-shadow: 0 0 0 3px rgba(245, 130, 32, .18);
+}
+
+.ab-404-page .ab-404-route-label {
+    color: var(--e404-muted);
+    font-weight: 600;
+}
+
+.ab-404-page .ab-404-route-code {
+    padding: 2px 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .86);
+    color: var(--e404-ink);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 14px;
+    font-weight: 700;
+    word-break: break-all;
+}
+
+.ab-404-page .ab-404-prev-hint {
+    margin: 0;
+    color: var(--e404-muted);
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.ab-404-page .ab-404-prev-hint strong {
+    color: var(--e404-teal-deep);
+    font-weight: 700;
+    word-break: break-all;
+}
+
+.ab-404-page .ab-404-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+/* Direct Support Strip */
+.ab-404-page .ab-404-support-strip {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: auto;
+}
+
+.ab-404-page .ab-404-support-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 15px;
+    border: 0;
+    border-radius: 18px;
+    background: linear-gradient(160deg, #ffffff 0%, #f5faf9 100%);
+    box-shadow: 0 6px 16px rgba(16, 38, 56, .06),
+        inset 0 1px 0 #ffffff;
+    transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.ab-404-page .ab-404-support-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 128, 128, .11),
+        inset 0 1px 0 #ffffff;
+}
+
+.ab-404-page .ab-404-support-item > span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+}
+
+.ab-404-page .ab-404-support-item small {
+    color: var(--e404-muted);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.ab-404-page .ab-404-support-item strong {
+    color: var(--e404-ink);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+/* Right-Side Architectural 404 Visual Container (Equal Height to Left Copy) */
+.ab-404-page .ab-404-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    align-self: stretch;
+    padding: 28px;
+    border-radius: 28px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0d2233 0%, #103e4d 56%, #0d666a 100%);
+    box-shadow: 0 20px 48px -12px rgba(15, 42, 58, .22),
+        0 6px 16px rgba(15, 42, 58, .08);
+    isolation: isolate;
+}
+
+.ab-404-page .ab-404-bg-img {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: .24;
+    mix-blend-mode: luminosity;
+}
+
+.ab-404-page .ab-404-visual-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(155deg,
+        rgba(12, 31, 47, .86) 0%,
+        rgba(14, 59, 73, .78) 54%,
+        rgba(11, 95, 99, .84) 100%);
+    pointer-events: none;
+}
+
+.ab-404-page .ab-404-visual-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(16, 38, 56, .68);
+    color: #eaf7f5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(6, 20, 32, .22),
+        inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+
+.ab-404-page .ab-404-code-stage {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 38px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 20px 44px rgba(5, 18, 28, .28),
+        inset 0 1px 0 rgba(255, 255, 255, .24),
+        inset 0 -2px 6px rgba(0, 0, 0, .14);
+    text-align: center;
+}
+
+.ab-404-page .ab-404-code-kicker {
+    color: #a8ded6;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.ab-404-page .ab-404-code-num {
+    display: block;
+    font-size: clamp(72px, 7.6vw, 112px);
+    font-weight: 800;
+    line-height: .96;
+    letter-spacing: -.04em;
+    background: linear-gradient(180deg, #ffffff 0%, #c6ece6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 12px 28px rgba(6, 20, 32, .25);
+}
+
+.ab-404-page .ab-404-code-sub {
+    margin-top: 8px;
+    padding: 5px 13px;
+    border-radius: 999px;
+    background: rgba(245, 130, 32, .18);
+    color: #ffd7b3;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.ab-404-page .ab-404-glass-card {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    padding: 14px 18px;
+    border-radius: 18px;
+    background: rgba(14, 34, 50, .74);
+    color: #ffffff;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 26px rgba(6, 20, 32, .24),
+        inset 0 1px 0 rgba(255, 255, 255, .16);
+}
+
+.ab-404-page .ab-404-glass-card small {
+    display: block;
+    margin-bottom: 2px;
+    color: #a8ded6;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.ab-404-page .ab-404-glass-card strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* =========================================================================
+   2. QUICK RECOVERY DESTINATIONS (BORDERLESS 3D CARDS)
+   ========================================================================= */
+
+.ab-404-page .ab-404-destinations {
+    padding: clamp(64px, 6.8vw, 92px) 0;
+    background: linear-gradient(180deg, #f3f8f7 0%, #ebf3f2 100%);
+}
+
+.ab-404-page .ab-404-section-head {
+    max-width: 720px;
+    margin: 0 0 40px;
+}
+
+.ab-404-page h2 {
+    margin: 0 0 14px;
+    color: var(--e404-ink);
+    font-size: clamp(29px, 3.3vw, 44px);
+    font-weight: 800;
+    line-height: 1.13;
+    letter-spacing: -.026em;
+}
+
+.ab-404-page .ab-404-section-head > p {
+    margin: 0;
+    color: var(--e404-muted);
+    font-size: 17px;
+    line-height: 1.64;
+}
+
+.ab-404-page .ab-404-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.ab-404-page .ab-404-card {
+    display: flex;
+    border: 0 !important;
+    border-radius: 24px;
+    background: linear-gradient(165deg, #ffffff 0%, #f8fcfb 100%);
+    box-shadow: var(--e404-surface-3d);
+    transition: transform .28s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .28s cubic-bezier(.22, 1, .36, 1);
+}
+
+.ab-404-page .ab-404-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--e404-surface-hover);
+}
+
+.ab-404-page .ab-404-card-link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 26px 24px;
+}
+
+.ab-404-page .ab-404-card .ab-icon-box {
+    margin-bottom: 18px;
+}
+
+.ab-404-page .ab-404-card:hover .ab-icon-box {
+    transform: translateY(-2px);
+}
+
+.ab-404-page .ab-404-card h3 {
+    margin: 0 0 10px;
+    color: var(--e404-ink);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -.018em;
+}
+
+.ab-404-page .ab-404-card p {
+    margin: 0 0 20px;
+    flex: 1;
+    color: var(--e404-muted);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.ab-404-page .ab-404-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    color: var(--e404-teal);
+    font-size: 17px;
+    font-weight: 700;
+    transition: gap .2s ease, color .2s ease;
+}
+
+.ab-404-page .ab-404-card:hover .ab-404-card-cta {
+    gap: 11px;
+    color: var(--e404-teal-deep);
+}
+
+/* =========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================= */
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .ab-404-page .ab-404-hero-grid {
+        grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr);
+        gap: 38px;
+        align-items: stretch;
+    }
+
+    .ab-404-page .ab-404-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1023px) {
+    .ab-404-page .ab-eyebrow {
+        font-size: 15px;
+        letter-spacing: .13em;
+    }
+
+    .ab-404-page .ab-404-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .ab-404-page .ab-404-visual {
+        height: 440px;
+        min-height: 440px;
+    }
+
+    .ab-404-page .ab-404-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .ab-404-page .ab-eyebrow {
+        font-size: 14px;
+        letter-spacing: .13em;
+        line-height: 1.5;
+    }
+
+    .ab-404-page .ab-eyebrow::before {
+        flex-basis: 18px;
+        width: 18px;
+    }
+
+    .ab-404-page h1 {
+        font-size: clamp(31px, 8vw, 39px);
+    }
+
+    .ab-404-page h2 {
+        font-size: clamp(26px, 7vw, 33px);
+    }
+
+    .ab-404-page .ab-404-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .ab-404-page .ab-404-actions .ab-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ab-404-page .ab-404-support-strip,
+    .ab-404-page .ab-404-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .ab-404-page .ab-404-visual {
+        height: 350px;
+        min-height: 350px;
+        padding: 20px;
+    }
+
+    .ab-404-page .ab-404-code-stage {
+        padding: 20px 28px;
+    }
+
+    .ab-404-page .ab-404-glass-card {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        padding: 12px 14px;
+    }
+
+    .ab-404-page .ab-404-card-link {
+        padding: 22px 20px;
+    }
+}
