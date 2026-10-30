@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Support page extras
+   --------------------------------------------------------------------------
+   The Support page reuses the complete Contact design system (contact.css is
+   loaded first via the .ab-contact-page class). This sheet only adds the
+   department-wise contact lines inside the sidebar cards — the mini mail and
+   phone rows that sit under each department label. Everything else (banner,
+   cards, form, buttons, type scale, spacing) is rendered by contact.css and
+   the shared banner system in site.css, so the theme stays 100% identical.
+   ========================================================================== */
+
+.ab-support-page .ab-support-dept-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    color: var(--ab-ink, #17384a);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    transition: color .2s ease;
+}
+
+.ab-support-page .ab-support-dept-line:hover,
+.ab-support-page .ab-support-dept-line:focus-visible {
+    color: var(--ab-teal, #008080);
+}
+
+.ab-support-page .ab-support-dept-line:focus-visible {
+    outline: 2px solid rgba(0, 128, 128, .28);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+.ab-support-page .ab-support-dept-line svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    color: var(--ab-teal, #008080);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Keep the department label line in the same rhythm as the other sidebar cards. */
+.ab-support-page .ab-support-dept > span:last-child {
+    gap: 5px;
+}
+
+@media (max-width: 480px) {
+    .ab-support-page .ab-support-dept-line {
+        font-size: 14px;
+    }
+}

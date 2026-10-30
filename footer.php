@@ -47,6 +47,7 @@ height="18">
         <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About Us</a>
         <a href="<?php echo esc_url( home_url( '/knowledge/' ) ); ?>">Knowledge Center</a>
         <a href="<?php echo esc_url( home_url( '/Contact-us/' ) ); ?>">Contact Us</a>
+        <a href="<?php echo esc_url( home_url( '/support/' ) ); ?>">Support</a>
       </nav>
       <nav class="ab-footer-nav" aria-label="Footer company navigation">
         <strong>Explore</strong>
@@ -69,6 +70,7 @@ height="18">
     </div>
     <div class="ab-footer-bottom">
       <span>© <?php echo esc_html( wp_date( 'Y' ) ); ?> Abiroverseas. All rights reserved.</span>
+      <span class="ab-footer-legal"><a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy Policy</a><a href="<?php echo esc_url( home_url( '/terms-and-conditions/' ) ); ?>">Terms &amp; Conditions</a></span>
       <span>Design and Developed by <a href="https://asrsbot.com/" style="font-weight:700; color:#82969f !important;">ASRSBot Technology</a></span>
     </div>
   </div>
