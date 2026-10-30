@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Privacy Policy / Terms and Conditions pages
+   --------------------------------------------------------------------------
+   Simple layout: the shared site-wide banner (background, padding and
+   decorative ring come from the shared banner system in site.css) with a
+   centred heading only, followed by long-form legal content.
+
+   The design foundation below is copied 1:1 from the Contact page's
+   foundation (contact.css) so font style, spacing, colour and container
+   sizing stay pinpoint identical with the rest of the theme. Long-form
+   content follows the Knowledge Center article pattern.
+   ========================================================================== */
+
+.ab-legal-page {
+    --ab-teal: #008080;
+    --ab-blue: #1D4E9F;
+    --ab-orange: #F58220;
+    --ab-charcoal: #4D4D4E;
+    --ab-ink: #142334;
+    --ab-muted: #536572;
+    --ab-paper: #f6f8f7;
+    --ab-white: #fff;
+    --ab-line: #dce5e5;
+    --ab-mist: #eaf3f2;
+    --ab-blue-mist: #edf2fa;
+    --ab-shadow: 0 24px 58px rgba(22,44,62,.12);
+    --ab-shadow-sm: 0 11px 30px rgba(22,44,62,.085);
+    --ab-radius: 24px;
+    --ab-max: 1240px;
+    color: var(--ab-charcoal);
+    font-family: "Reddit Sans", Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+}
+.ab-legal-page *,
+.ab-legal-page *::before,
+.ab-legal-page *::after { box-sizing: border-box; }
+.ab-legal-page img,
+.ab-legal-page svg { display: block; max-width: 100%; }
+.ab-legal-page a { color: inherit; text-decoration: none; }
+.ab-legal-page .ab-wrap { width: min(1240px, calc(100% - 56px)); margin-inline: auto; }
+.ab-legal-page h1,
+.ab-legal-page h2,
+.ab-legal-page h3,
+.ab-legal-page h4,
+.ab-legal-page h5,
+.ab-legal-page h6 {
+    margin: 18px 0 18px;
+    color: var(--ab-ink);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -.025em;
+}
+.ab-legal-page h1 { font-size: 60px; }
+.ab-legal-page h2 { font-size: 52px; }
+.ab-legal-page h3 { font-size: 22px; }
+.ab-legal-page p { margin: 0 0 1em; }
+.ab-legal-page .ab-section { position: relative; scroll-margin-top: 100px; }
+@media (max-width: 1100px) {
+    .ab-legal-page .ab-wrap { width: min(1240px, calc(100% - 42px)); }
+}
+@media (max-width: 600px) {
+    .ab-legal-page .ab-wrap { width: calc(100% - 36px); }
+}
+@media (max-width: 767px) {
+    .ab-legal-page p,
+    .ab-legal-page li { font-size: 16px; }
+    .ab-legal-page h1 { font-size: clamp(36px, 8vw, 44px); }
+    .ab-legal-page h2 { font-size: clamp(30px, 6.5vw, 38px); }
+}
+
+/* --------------------------------------------------------------------------
+   Simple banner: shared website banner background + centred heading only.
+   (Background, top/bottom padding and the decorative ring are supplied by the
+   shared banner system in site.css via .ab-legal-hero.)
+   -------------------------------------------------------------------------- */
+.ab-legal-hero {
+    text-align: center;
+}
+.ab-legal-hero h1 {
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Long-form content — the Knowledge Center article pattern (kh-content-*),
+   restyled onto the shared brand tokens.
+   -------------------------------------------------------------------------- */
+.ab-legal-body {
+    padding: clamp(58px, 7vw, 90px) 0 clamp(64px, 8vw, 100px);
+    background: linear-gradient(180deg, #fff 0%, #fbfdfc 100%);
+}
+.ab-legal-content {
+    max-width: 900px;
+    margin-inline: auto;
+}
+.ab-legal-updated {
+    margin: 0 0 21px;
+    color: #74818b;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: .02em;
+}
+.ab-legal-intro {
+    margin: 0 0 42px;
+    color: var(--ab-muted, #536572);
+    font-size: 17px;
+    line-height: 1.68;
+}
+.ab-legal-section {
+    margin: 0 0 42px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--ab-line, #dce5e5);
+    scroll-margin-top: 110px;
+}
+.ab-legal-section:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+.ab-legal-section h2 {
+    margin: 0 0 18px;
+    color: var(--ab-ink, #142334);
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.2;
+    letter-spacing: -.02em;
+}
+.ab-legal-section h3 {
+    margin: 24px 0 10px;
+    font-size: 22px;
+    line-height: 1.12;
+    letter-spacing: -.025em;
+}
+.ab-legal-section p,
+.ab-legal-section li {
+    color: #536372;
+    font-size: 17px;
+    line-height: 1.68;
+}
+.ab-legal-section p { margin: 0 0 1em; }
+.ab-legal-section p:last-child { margin-bottom: 0; }
+.ab-legal-section ul,
+.ab-legal-section ol {
+    margin: 0 0 1em;
+    padding-left: 22px;
+}
+.ab-legal-section li { margin-bottom: 8px; }
+.ab-legal-section li::marker { color: var(--ab-teal, #008080); }
+.ab-legal-section a {
+    color: var(--ab-teal, #008080);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color .2s ease;
+}
+.ab-legal-section a:hover { color: var(--ab-orange, #F58220); }
+@media (max-width: 767px) {
+    .ab-legal-updated { margin-bottom: 17px; }
+    .ab-legal-intro { margin-bottom: 32px; }
+    .ab-legal-section {
+        margin-bottom: 32px;
+        padding-bottom: 28px;
+    }
+    .ab-legal-section h2 { font-size: 26px; }
+    .ab-legal-section p,
+    .ab-legal-section li { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ab-legal-page *, .ab-legal-page *:before, .ab-legal-page *:after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}

@@ -97,6 +97,12 @@ function ab_enqueue_assets() {
         } elseif ( 'contact-us' === $slug || in_array( $template, array( 'page-template/template-contact.php', 'page-templates/template-contact.php' ), true ) ) {
             // Keep Contact page styling isolated in its own stylesheet.
             $styles = array( 'contact.css' );
+        } elseif ( 'support' === $slug || in_array( $template, array( 'page-template/template-support.php', 'page-templates/template-support.php' ), true ) ) {
+            // Support reuses the complete Contact design system plus its own department-card extras.
+            $styles = array( 'contact.css', 'support.css' );
+        } elseif ( in_array( $slug, array( 'privacy-policy', 'terms-and-conditions' ), true ) || in_array( $template, array( 'page-template/template-privacy-policy.php', 'page-template/template-terms-conditions.php', 'page-templates/template-privacy-policy.php', 'page-templates/template-terms-conditions.php' ), true ) ) {
+            // Privacy Policy and Terms & Conditions share the simple legal layout.
+            $styles = array( 'legal.css' );
         } elseif ( ab_is_bhavik_page() ) {
             // Keep Bhavik Enterprises 100% isolated in its own dedicated stylesheet and script.
             $styles = array( 'bhavik.css' );
@@ -247,6 +253,7 @@ function ab_seed_primary_menu() {
         ab_add_primary_menu_item( $menu_id, 'Industries', home_url( '/#markets' ) );
         ab_add_primary_menu_item( $menu_id, 'Resources', home_url( '/knowledge/' ) );
         ab_add_primary_menu_item( $menu_id, 'About Us', home_url( '/about/' ) );
+        ab_add_primary_menu_item( $menu_id, 'Support', home_url( '/support/' ) );
         ab_add_primary_menu_item( $menu_id, 'Get a Custom Quote', home_url( '/#quick-enquiry' ), 0, array( 'ab-nav-quote' ) );
     }
     $locations['primary'] = (int) $menu_id;
@@ -466,12 +473,91 @@ function ab_ensure_material_and_contact_pages() {
     update_option( 'ab_material_contact_pages_v156_ready', 1 );
 }
 
+/**
+ * Ensure the Support, Privacy Policy and Terms & Conditions pages exist once on
+ * live sites. Nothing existing is overwritten: a page is only created when the
+ * slug is missing, and template / SEO meta are only written when still empty.
+ */
+add_action( 'init', 'ab_ensure_support_and_legal_pages', 33 );
+function ab_ensure_support_and_legal_pages() {
+    if ( get_option( 'ab_support_legal_pages_ready' ) ) { return; }
+
+    $pages = array(
+        array(
+            'slug'            => 'support',
+            'title'           => 'Support',
+            'template'        => 'page-template/template-support.php',
+            'templates'       => array( 'page-template/template-support.php', 'page-templates/template-support.php' ),
+            'seo_title'       => 'Support | Department-Wise Contacts & Enquiry Form | Abiroverseas',
+            'seo_description' => 'Reach the right Abiroverseas desk directly — product enquiry, logistics, accounts, operations and sales — by email, phone or the support enquiry form.',
+        ),
+        array(
+            'slug'            => 'privacy-policy',
+            'title'           => 'Privacy Policy',
+            'template'        => 'page-template/template-privacy-policy.php',
+            'templates'       => array( 'page-template/template-privacy-policy.php', 'page-templates/template-privacy-policy.php' ),
+            'seo_title'       => 'Privacy Policy | Abiroverseas',
+            'seo_description' => 'How Abiroverseas collects, uses, stores and protects personal information submitted through this website.',
+        ),
+        array(
+            'slug'            => 'terms-and-conditions',
+            'title'           => 'Terms and Conditions',
+            'template'        => 'page-template/template-terms-conditions.php',
+            'templates'       => array( 'page-template/template-terms-conditions.php', 'page-templates/template-terms-conditions.php' ),
+            'seo_title'       => 'Terms and Conditions | Abiroverseas',
+            'seo_description' => 'The terms governing use of the Abiroverseas website, enquiries, quotations, orders and supply of polymer materials.',
+        ),
+    );
+
+    foreach ( $pages as $page_spec ) {
+        $existing_by_tpl = get_posts( array(
+            'post_type'      => 'page',
+            'post_status'    => array( 'publish', 'draft', 'private', 'pending' ),
+            'posts_per_page' => 1,
+            'fields'         => 'ids',
+            'no_found_rows'  => true,
+            'meta_query'     => array(
+                array(
+                    'key'     => '_wp_page_template',
+                    'value'   => $page_spec['templates'],
+                    'compare' => 'IN',
+                ),
+            ),
+        ) );
+        if ( ! empty( $existing_by_tpl ) ) { continue; }
+
+        $existing_by_slug = get_page_by_path( $page_spec['slug'], OBJECT, 'page' );
+        if ( $existing_by_slug ) {
+            $page_id = (int) $existing_by_slug->ID;
+            if ( ! get_post_meta( $page_id, '_wp_page_template', true ) ) {
+                update_post_meta( $page_id, '_wp_page_template', $page_spec['template'] );
+            }
+        } else {
+            $new_page_id = wp_insert_post( array(
+                'post_type'   => 'page',
+                'post_status' => 'publish',
+                'post_title'  => $page_spec['title'],
+                'post_name'   => $page_spec['slug'],
+            ), true );
+            if ( is_wp_error( $new_page_id ) || ! $new_page_id ) { continue; }
+            $page_id = (int) $new_page_id;
+            update_post_meta( $page_id, '_wp_page_template', $page_spec['template'] );
+        }
+
+        if ( ! get_post_meta( $page_id, 'ab_meta_title', true ) ) { update_post_meta( $page_id, 'ab_meta_title', $page_spec['seo_title'] ); }
+        if ( ! get_post_meta( $page_id, 'ab_meta_description', true ) ) { update_post_meta( $page_id, 'ab_meta_description', $page_spec['seo_description'] ); }
+    }
+
+    update_option( 'ab_support_legal_pages_ready', 1 );
+}
+
 function ab_primary_menu_fallback() {
     $items = array(
         array( 'Home', home_url( '/' ) ),
         array( 'HDPE', home_url( '/hdpe/' ) ),
         array( 'Resources', home_url( '/knowledge/' ) ),
         array( 'About Us', home_url( '/about/' ) ),
+        array( 'Support', home_url( '/support/' ) ),
         array( 'Get a Custom Quote', home_url( '/#quick-enquiry' ), 'ab-nav-quote' ),
     );
     $html = '<ul id="ab-primary-menu" class="ab-nav-menu">';
