@@ -13,6 +13,7 @@ get_header();
     <section class="ab-legal-hero" aria-labelledby="ab-legal-title">
         <div class="ab-wrap">
             <h1 id="ab-legal-title">Terms and Conditions</h1>
+            <p>Please read these terms carefully — they govern your use of this website and any enquiry, quotation or order placed with Abiroverseas.</p>
         </div>
     </section>
 

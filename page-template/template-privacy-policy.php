@@ -13,6 +13,7 @@ get_header();
     <section class="ab-legal-hero" aria-labelledby="ab-legal-title">
         <div class="ab-wrap">
             <h1 id="ab-legal-title">Privacy Policy</h1>
+            <p>Your privacy matters to us. This policy explains what information we collect through this website, how we use it, and the choices you have.</p>
         </div>
     </section>
 

@@ -69,39 +69,11 @@ $ab_support_mail_icon  = '<rect x="3.5" y="6" width="17" height="12" rx="2"/><pa
 $ab_support_phone_icon = '<path d="M7.1 3.8H4.8c-.8 0-1.4.7-1.3 1.5.7 7.9 7.1 14.3 15 15 .8.1 1.5-.5 1.5-1.3v-2.3l-4.1-1-1.3 2a14.3 14.3 0 0 1-6.5-6.5l2-1.3-1-4.1z"/>';
 ?>
 <main id="main-content" class="ab-contact-page ab-support-page">
-    <section class="ab-contact-hero" aria-labelledby="ab-support-title">
-        <div class="ab-wrap ab-contact-hero-grid">
-            <div class="ab-contact-hero-copy">
-                <span class="ab-eyebrow">Department support · we’re here to help</span>
-                <h1 id="ab-support-title">Support Abiroverseas.</h1>
-                <p class="ab-contact-hero-lead">Need help with a product, delivery, invoice or an ongoing order? Reach the right department directly, or send us a message and we’ll route it to the right desk.</p>
-                <div class="ab-contact-hero-actions">
-                    <a class="ab-btn" href="#quick-enquiry">SEND AN ENQUIRY <svg class="ab-icon" aria-hidden="true"><use href="#ab-icon-arrow" /></svg></a>
-                    <a class="ab-btn ab-btn--light" href="mailto:info@abiroverseas.com">EMAIL OUR TEAM</a>
-                </div>
-                <div class="ab-contact-hero-meta">
-                    <a href="mailto:info@abiroverseas.com"><span class="ab-contact-meta-mark" aria-hidden="true">✉</span><span><strong>Email us</strong><small>info@abiroverseas.com</small></span></a>
-                    <a href="tel:+18565233366"><span class="ab-contact-meta-mark ab-contact-meta-mark--orange" aria-hidden="true">↗</span><span><strong>Call our team</strong><small>+1 (856) 523 3366</small></span></a>
-                    <a class="ab-contact-meta-item ab-contact-meta-item--whatsapp" href="https://wa.me/18565233366" target="_blank" rel="noopener noreferrer"><span class="ab-contact-meta-mark ab-contact-meta-mark--whatsapp" aria-hidden="true"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720"
-width="18"
-height="18">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #00ac55;
-      }
-    </style>
-  </defs>
-  <path class="cls-1" d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/>
-  <path class="cls-1" d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/>
-</svg></span><span><strong>WhatsApp</strong><small>+1 (856) 523 3366</small></span></a>
-                </div>
-            </div>
-            <div class="ab-contact-hero-art" role="img" aria-label="Close-up of industrial polymer resin pellets and flowing material forms">
-                <img class="ab-contact-hero-img" src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/10/Frame-3.jpg' ) ); ?>" alt="Industrial resin pellets and flowing polymer forms" width="900" height="700" fetchpriority="high">
-                <span class="ab-contact-art-tag">Support · departments · response</span>
-                <div class="ab-contact-art-caption"><span class="ab-contact-caption-dot" aria-hidden="true"></span><span><small>Start with your question</small><strong>Find the right support desk.</strong></span></div>
-            </div>
+    <!-- Simple banner: shared website banner background, centred heading + intro (same as Privacy Policy banner). -->
+    <section class="ab-legal-hero" aria-labelledby="ab-support-title">
+        <div class="ab-wrap">
+            <h1 id="ab-support-title">Support Abiroverseas.</h1>
+            <p>Need help with a product, delivery, invoice or an ongoing order? Reach the right department directly, or send us a message and we’ll route it to the right desk.</p>
         </div>
     </section>
 

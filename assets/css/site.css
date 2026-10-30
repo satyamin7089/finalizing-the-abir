@@ -788,6 +788,30 @@ body { margin: 0; }
     display: none !important;
 }
 
+/* Simple centred banner (Privacy Policy, Terms and Conditions, Support):
+   centred heading + intro paragraph only, on the shared banner background. */
+.ab-legal-hero {
+    text-align: center;
+}
+
+.ab-legal-hero h1 {
+    margin: 0;
+}
+
+.ab-legal-hero p {
+    max-width: 720px;
+    margin: 18px auto 0;
+    color: #536572;
+    font-size: 17px;
+    line-height: 1.68;
+}
+
+@media (max-width: 767px) {
+    .ab-legal-hero p {
+        font-size: 16px;
+    }
+}
+
 /* Ensure banner grids and slider/media frames always sit cleanly above hero backgrounds. */
 .ab-hero-grid,
 .ab-about-hero-grid,
