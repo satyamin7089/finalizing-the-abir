@@ -38,10 +38,10 @@ get_header();
           <!-- Hero visual -->
           <div class="ab-about-hero-art ab-reveal ab-reveal-delay-1" role="img"
             aria-label="Polymer pellets - macro photograph of raw plastic material">
-            <img class="ab-hero-img" src="<?php echo esc_url( get_theme_file_uri( '/assets/img/pellets-macro.jpg' ) ); ?>" width="700" height="520"
-              alt="Polymer pellets - macro photograph" decoding="async">
-        
-          </div>
+            <video class="ab-hero-img" src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/10/video1.mp4' ) ); ?>"
+              poster="<?php echo esc_url( home_url( '/wp-content/uploads/2026/10/default-video-image.png' ) ); ?>"
+              width="700" height="520" autoplay loop muted playsinline preload="auto"></video>
+        </div>
         </div>
       </div>
     </section>
