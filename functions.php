@@ -172,6 +172,8 @@ function ab_enqueue_assets() {
     if ( $script ) { wp_enqueue_script( 'ab-page-interactions', $base . '/assets/js/' . $script, array(), $asset_ver( '/assets/js/' . $script ), true ); }
     // One navigation controller serves the shared header on every page.
     wp_enqueue_script( 'ab-navigation', $base . '/assets/js/navigation.js', array(), $asset_ver( '/assets/js/navigation.js' ), true );
+    // Partner logo marquee above the footer (touch / off-screen pause handling).
+    wp_enqueue_script( 'ab-marquee', $base . '/assets/js/marquee.js', array(), $asset_ver( '/assets/js/marquee.js' ), true );
 }
 
 /** Install starter pages without overwriting existing page copy. */

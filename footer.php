@@ -4,7 +4,39 @@
  * Note: Bhavik Enterprises uses its own standalone footer-bhavik.php.
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+/* Partner logo marquee — 5 logos, 4 shown at a time, seamless one-way loop.
+   Swap the image files in assets/img/marquee/ (keep the same 240×64 ratio) and
+   set each 'url' to the real partner / client link. */
+$ab_marquee_logos = array(
+    array( 'name' => 'Nexora',   'img' => 'logo-1.svg', 'url' => '#' ),
+    array( 'name' => 'Polymax',  'img' => 'logo-2.svg', 'url' => '#' ),
+    array( 'name' => 'Vertexa',  'img' => 'logo-3.svg', 'url' => '#' ),
+    array( 'name' => 'Corelink', 'img' => 'logo-4.svg', 'url' => '#' ),
+    array( 'name' => 'Omnipro',  'img' => 'logo-5.svg', 'url' => '#' ),
+);
 ?>
+<!-- Partner logo marquee -->
+<section class="ab-logo-marquee-section" aria-labelledby="ab-marquee-title">
+  <div class="ab-wrap">
+    <div class="ab-marquee-head">
+      <span class="ab-eyebrow" id="ab-marquee-title">Our partners</span>
+    </div>
+    <div class="ab-logo-marquee">
+      <div class="ab-logo-track">
+        <?php for ( $ab_marquee_pass = 0; $ab_marquee_pass < 2; $ab_marquee_pass++ ) : ?>
+        <div class="ab-logo-group"<?php echo 1 === $ab_marquee_pass ? ' aria-hidden="true"' : ''; ?>>
+          <?php foreach ( $ab_marquee_logos as $ab_marquee_logo ) : ?>
+          <a class="ab-logo-item" href="<?php echo esc_url( $ab_marquee_logo['url'] ); ?>"<?php echo 1 === $ab_marquee_pass ? ' tabindex="-1"' : ''; ?>>
+            <img src="<?php echo esc_url( get_theme_file_uri( '/assets/img/marquee/' . $ab_marquee_logo['img'] ) ); ?>" alt="<?php echo esc_attr( $ab_marquee_logo['name'] ); ?>" width="240" height="64" loading="lazy">
+          </a>
+          <?php endforeach; ?>
+        </div>
+        <?php endfor; ?>
+      </div>
+    </div>
+  </div>
+</section>
 <footer class="ab-footer">
   <div class="ab-wrap">
     <div class="ab-footer-layout">
